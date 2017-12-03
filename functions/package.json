@@ -30,7 +30,6 @@
     "chai": "^4.1.2",
     "eslint": "^4.12.1",
     "eslint-config-groupon-node6": "^4.1.2",
-    "eslint-config-node": "^1.6.0",
     "eslint-plugin-prettier": "^2.3.1",
     "mocha": "^4.0.1",
     "nock": "^9.1.4",

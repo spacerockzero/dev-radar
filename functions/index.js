@@ -37,6 +37,13 @@ exports.makeUppercase = functions.database.ref('/messages/{pushId}/original').on
   return event.data.ref.parent.child('uppercase').set(uppercase);
 });
 
-exports.getFeedContent = function() {
-  return feedUtils.processFlow(sources);
-};
+exports.getFeedContent = functions.https.onRequest((req, res) => {
+  feedUtils
+    .processFlow(sources)
+    .then(content => {
+      res.status(200).send(content);
+    })
+    .catch(err => {
+      res.status(500).send(err);
+    });
+});
