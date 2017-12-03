@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+  <channel>
+    <title>Lobsters</title>
+    <description></description>
+    <link>https://lobste.rs/</link>
+
+      <item>
+        <title>sshtalk</title>
+        <link>https://2ton.com.au/sshtalk/</link>
+        <guid isPermaLink="false">https://lobste.rs/s/tcqup6</guid>
+        <author>mulander</author>
+        <pubDate>Sat, 02 Dec 2017 10:46:13 -0600</pubDate>
+        <comments>https://lobste.rs/s/tcqup6/sshtalk</comments>
+        <description>
+          
+            &#60;p&#62;&#60;a href=&#34;https://lobste.rs/s/tcqup6/sshtalk&#34;&#62;Comments&#60;/a&#62;&#60;/p&#62;
+        </description>
+          <category>assembly</category>
+      </item>
+      <item>
+        <title>Cross Compiling ATS Programs</title>
+        <link>https://bluishcoder.co.nz/2017/12/02/cross-compiling-ats-programs.html</link>
+        <guid isPermaLink="false">https://lobste.rs/s/rlrh4v</guid>
+        <author>doublec</author>
+        <pubDate>Sat, 02 Dec 2017 05:40:47 -0600</pubDate>
+        <comments>https://lobste.rs/s/rlrh4v/cross_compiling_ats_programs</comments>
+        <description>
+          
+            &#60;p&#62;&#60;a href=&#34;https://lobste.rs/s/rlrh4v/cross_compiling_ats_programs&#34;&#62;Comments&#60;/a&#62;&#60;/p&#62;
+        </description>
+          <category>programming</category>
+      </item>
+      <item>
+        <title>Taking a sabbatical to work on Ruby profiling tools</title>
+        <link>https://jvns.ca/blog/2017/12/02/taking-a-sabbatical-to-work-on-ruby-profiling-tools/</link>
+        <guid isPermaLink="false">https://lobste.rs/s/rbjbae</guid>
+        <author>calvin</author>
+        <pubDate>Sat, 02 Dec 2017 09:51:21 -0600</pubDate>
+        <comments>https://lobste.rs/s/rbjbae/taking_sabbatical_work_on_ruby_profiling</comments>
+        <description>
+          
+            &#60;p&#62;&#60;a href=&#34;https://lobste.rs/s/rbjbae/taking_sabbatical_work_on_ruby_profiling&#34;&#62;Comments&#60;/a&#62;&#60;/p&#62;
+        </description>
+          <category>ruby</category>
+      </item>
+      <item>
+        <title>Memory Security in Go</title>
+        <link>https://cryptolosophy.org/memory-security-go/</link>
+        <guid isPermaLink="false">https://lobste.rs/s/8vniaj</guid>
+        <author>awn</author>
+        <pubDate>Fri, 01 Dec 2017 13:22:23 -0600</pubDate>
+        <comments>https://lobste.rs/s/8vniaj/memory_security_go</comments>
+        <description>
+          
+            &#60;p&#62;&#60;a href=&#34;https://lobste.rs/s/8vniaj/memory_security_go&#34;&#62;Comments&#60;/a&#62;&#60;/p&#62;
+        </description>
+          <category>security</category>
+          <category>go</category>
+          <category>crypto</category>
+      </item>
+      <item>
+        <title>MacOS Update Accidentally Undoes Apple&#39;s &#34;Root&#34; Bug Patch</title>
+        <link>https://www.wired.com/story/macos-update-undoes-apple-root-bug-patch/</link>
+        <guid isPermaLink="false">https://lobste.rs/s/caacgf</guid>
+        <author>nhooyr</author>
+        <pubDate>Fri, 01 Dec 2017 17:49:17 -0600</pubDate>
+        <comments>https://lobste.rs/s/caacgf/macos_update_accidentally_undoes_apples</comments>
+        <description>
+          
+            &#60;p&#62;&#60;a href=&#34;https://lobste.rs/s/caacgf/macos_update_accidentally_undoes_apples&#34;&#62;Comments&#60;/a&#62;&#60;/p&#62;
+        </description>
+          <category>security</category>
+          <category>mac</category>
+      </item>
+      <item>
+        <title>Automating Go development with Make</title>
+        <link>https://blog.gopheracademy.com/advent-2017/make/?lobsters</link>
+        <guid isPermaLink="false">https://lobste.rs/s/qpkaqr</guid>
+        <author>kb</author>
+        <pubDate>Sat, 02 Dec 2017 09:07:24 -0600</pubDate>
+        <comments>https://lobste.rs/s/qpkaqr/automating_go_development_with_make</comments>
+        <description>
+          
+            &#60;p&#62;&#60;a href=&#34;https://lobste.rs/s/qpkaqr/automating_go_development_with_make&#34;&#62;Comments&#60;/a&#62;&#60;/p&#62;
+        </description>
+          <category>go</category>
+          <category>programming</category>
+      </item>
+      <item>
+        <title>This Interview Was Conducted on an Anonymous, DIY Cell Phone Network</title>
+        <link>https://motherboard.vice.com/en_us/article/595zg5/sopranica-jmp-wom-cell-network-diy-anonymous</link>
+        <guid isPermaLink="false">https://lobste.rs/s/p2ng28</guid>
+        <author>Yogthos</author>
+        <pubDate>Sat, 02 Dec 2017 11:16:20 -0600</pubDate>
+        <comments>https://lobste.rs/s/p2ng28/this_interview_was_conducted_on</comments>
+        <description>
+          
+            &#60;p&#62;&#60;a href=&#34;https://lobste.rs/s/p2ng28/this_interview_was_conducted_on&#34;&#62;Comments&#60;/a&#62;&#60;/p&#62;
+        </description>
+          <category>privacy</category>
+      </item>
+      <item>
+        <title>Tag Suggestion: Operating Systems</title>
+        <link>https://lobste.rs/s/wlws9j/tag_suggestion_operating_systems</link>
+        <guid isPermaLink="false">https://lobste.rs/s/wlws9j</guid>
+        <author>nickpsecurity</author>
+        <pubDate>Fri, 01 Dec 2017 10:34:49 -0600</pubDate>
+        <comments>https://lobste.rs/s/wlws9j/tag_suggestion_operating_systems</comments>
+        <description>
+          &#60;p&#62;When submitting the Quest OS, I couldn&#8217;t find a tag that fit it past CompSci. I noticed more than once we don&#8217;t have a tag to say something is about developing or releasing an operating system even though that&#8217;s the category for many examples of research, FOSS projects, and commercial products. We do have specific tags for some popular UNIX&#8217;s, Mac OS, and Windows as precedent for an OS-centric tag. This tag can merely be called &#8220;OS - Operating Systems.&#8221;&#60;/p&#62;&#10;
+        </description>
+          <category>meta</category>
+      </item>
+      <item>
+        <title>Django 2.0 released</title>
+        <link>https://www.djangoproject.com/weblog/2017/dec/02/django-20-released/</link>
+        <guid isPermaLink="false">https://lobste.rs/s/dsxndb</guid>
+        <author>av</author>
+        <pubDate>Sat, 02 Dec 2017 10:20:31 -0600</pubDate>
+        <comments>https://lobste.rs/s/dsxndb/django_2_0_released</comments>
+        <description>
+          
+            &#60;p&#62;&#60;a href=&#34;https://lobste.rs/s/dsxndb/django_2_0_released&#34;&#62;Comments&#60;/a&#62;&#60;/p&#62;
+        </description>
+          <category>python</category>
+          <category>release</category>
+          <category>web</category>
+      </item>
+      <item>
+        <title>Linux Journal Ceases Publication</title>
+        <link>http://www.linuxjournal.com/content/linux-journal-ceases-publication</link>
+        <guid isPermaLink="false">https://lobste.rs/s/qvmvkq</guid>
+        <author>ChrisShort</author>
+        <pubDate>Fri, 01 Dec 2017 15:45:27 -0600</pubDate>
+        <comments>https://lobste.rs/s/qvmvkq/linux_journal_ceases_publication</comments>
+        <description>
+          
+            &#60;p&#62;&#60;a href=&#34;https://lobste.rs/s/qvmvkq/linux_journal_ceases_publication&#34;&#62;Comments&#60;/a&#62;&#60;/p&#62;
+        </description>
+          <category>linux</category>
+      </item>
+      <item>
+        <title>Practical ATS</title>
+        <link>http://blog.vmchale.com/article/practical-ats</link>
+        <guid isPermaLink="false">https://lobste.rs/s/be61lb</guid>
+        <author>cmhamill</author>
+        <pubDate>Sat, 02 Dec 2017 00:46:39 -0600</pubDate>
+        <comments>https://lobste.rs/s/be61lb/practical_ats</comments>
+        <description>
+          
+            &#60;p&#62;&#60;a href=&#34;https://lobste.rs/s/be61lb/practical_ats&#34;&#62;Comments&#60;/a&#62;&#60;/p&#62;
+        </description>
+          <category>programming</category>
+      </item>
+      <item>
+        <title>Restic Cryptography</title>
+        <link>https://blog.filippo.io/restic-cryptography/</link>
+        <guid isPermaLink="false">https://lobste.rs/s/lyc1gn</guid>
+        <author>awn</author>
+        <pubDate>Sat, 02 Dec 2017 08:41:52 -0600</pubDate>
+        <comments>https://lobste.rs/s/lyc1gn/restic_cryptography</comments>
+        <description>
+          
+            &#60;p&#62;&#60;a href=&#34;https://lobste.rs/s/lyc1gn/restic_cryptography&#34;&#62;Comments&#60;/a&#62;&#60;/p&#62;
+        </description>
+          <category>crypto</category>
+      </item>
+      <item>
+        <title>Ubuntu 17.10: Return of the GNOME</title>
+        <link>https://arstechnica.com/gadgets/2017/11/ubuntu-17-10-return-of-the-gnome/</link>
+        <guid isPermaLink="false">https://lobste.rs/s/aqdyua</guid>
+        <author>calvin</author>
+        <pubDate>Sat, 02 Dec 2017 05:48:54 -0600</pubDate>
+        <comments>https://lobste.rs/s/aqdyua/ubuntu_17_10_return_gnome</comments>
+        <description>
+          
+            &#60;p&#62;&#60;a href=&#34;https://lobste.rs/s/aqdyua/ubuntu_17_10_return_gnome&#34;&#62;Comments&#60;/a&#62;&#60;/p&#62;
+        </description>
+          <category>linux</category>
+      </item>
+      <item>
+        <title>Automated Caries Detection on Bitewing Radiographs Using Deep CNNs</title>
+        <link>http://blog.paralleldots.com/research/automated-caries-detection-bitewing-radiographs-using-deep-cnns/</link>
+        <guid isPermaLink="false">https://lobste.rs/s/f6yn4t</guid>
+        <author>Shashankg22</author>
+        <pubDate>Sat, 02 Dec 2017 01:36:44 -0600</pubDate>
+        <comments>https://lobste.rs/s/f6yn4t/automated_caries_detection_on_bitewing</comments>
+        <description>
+          
+            &#60;p&#62;&#60;a href=&#34;https://lobste.rs/s/f6yn4t/automated_caries_detection_on_bitewing&#34;&#62;Comments&#60;/a&#62;&#60;/p&#62;
+        </description>
+          <category>ai</category>
+      </item>
+      <item>
+        <title>The Corpus Christi Prime</title>
+        <link>https://friendlyfieldsandopenmaps.com/2017/09/08/the-corpus-christi-prime/</link>
+        <guid isPermaLink="false">https://lobste.rs/s/vxmkrp</guid>
+        <author>awn</author>
+        <pubDate>Fri, 01 Dec 2017 13:24:17 -0600</pubDate>
+        <comments>https://lobste.rs/s/vxmkrp/corpus_christi_prime</comments>
+        <description>
+          
+            &#60;p&#62;&#60;a href=&#34;https://lobste.rs/s/vxmkrp/corpus_christi_prime&#34;&#62;Comments&#60;/a&#62;&#60;/p&#62;
+        </description>
+          <category>math</category>
+      </item>
+      <item>
+        <title>Why &#39;d = {}&#39; is faster than &#39;d = dict()&#39;</title>
+        <link>https://blog.bordum.dk/fast-empty-sequences-in-python.html</link>
+        <guid isPermaLink="false">https://lobste.rs/s/ikbv3h</guid>
+        <author>feoh</author>
+        <pubDate>Fri, 01 Dec 2017 11:03:38 -0600</pubDate>
+        <comments>https://lobste.rs/s/ikbv3h/why_d_is_faster_than_d_dict</comments>
+        <description>
+          
+            &#60;p&#62;&#60;a href=&#34;https://lobste.rs/s/ikbv3h/why_d_is_faster_than_d_dict&#34;&#62;Comments&#60;/a&#62;&#60;/p&#62;
+        </description>
+          <category>python</category>
+      </item>
+      <item>
+        <title>Charles Web Debugging Proxy</title>
+        <link>https://www.charlesproxy.com/</link>
+        <guid isPermaLink="false">https://lobste.rs/s/1zzs9d</guid>
+        <author>indigo</author>
+        <pubDate>Sat, 02 Dec 2017 01:13:03 -0600</pubDate>
+        <comments>https://lobste.rs/s/1zzs9d/charles_web_debugging_proxy</comments>
+        <description>
+          
+            &#60;p&#62;&#60;a href=&#34;https://lobste.rs/s/1zzs9d/charles_web_debugging_proxy&#34;&#62;Comments&#60;/a&#62;&#60;/p&#62;
+        </description>
+          <category>web</category>
+          <category>debugging</category>
+      </item>
+      <item>
+        <title>&#39;Break up Google and Facebook if you ever want innovation again&#39;</title>
+        <link>https://www.theregister.co.uk/2017/11/28/break_up_google_and_facebook_if_you_want_tech_innovation_ever_again/</link>
+        <guid isPermaLink="false">https://lobste.rs/s/nmvkwm</guid>
+        <author>calvin</author>
+        <pubDate>Sat, 02 Dec 2017 05:48:13 -0600</pubDate>
+        <comments>https://lobste.rs/s/nmvkwm/break_up_google_facebook_if_you_ever_want</comments>
+        <description>
+          
+            &#60;p&#62;&#60;a href=&#34;https://lobste.rs/s/nmvkwm/break_up_google_facebook_if_you_ever_want&#34;&#62;Comments&#60;/a&#62;&#60;/p&#62;
+        </description>
+          <category>law</category>
+          <category>practices</category>
+          <category>culture</category>
+      </item>
+      <item>
+        <title>A Year of Developer Journaling with jrnl.sh</title>
+        <link>http://rickcarlino.com/2017/11/27/keeping-a-developer-journal-with-jrnl-sh-html.html</link>
+        <guid isPermaLink="false">https://lobste.rs/s/bk5yzx</guid>
+        <author>rickcarlino</author>
+        <pubDate>Thu, 30 Nov 2017 20:48:32 -0600</pubDate>
+        <comments>https://lobste.rs/s/bk5yzx/year_developer_journaling_with_jrnl_sh</comments>
+        <description>
+          
+            &#60;p&#62;&#60;a href=&#34;https://lobste.rs/s/bk5yzx/year_developer_journaling_with_jrnl_sh&#34;&#62;Comments&#60;/a&#62;&#60;/p&#62;
+        </description>
+          <category>practices</category>
+          <category>programming</category>
+      </item>
+      <item>
+        <title>Websites use your CPU to mine cryptocurrency even when you close your browser</title>
+        <link>https://arstechnica.com/information-technology/2017/11/sneakier-more-persistent-drive-by-cryptomining-comes-to-a-browser-near-you</link>
+        <guid isPermaLink="false">https://lobste.rs/s/ij37mt</guid>
+        <author>rzhikharevich</author>
+        <pubDate>Fri, 01 Dec 2017 00:35:47 -0600</pubDate>
+        <comments>https://lobste.rs/s/ij37mt/websites_use_your_cpu_mine</comments>
+        <description>
+          &#60;p&#62;I wonder why and how is this even possible to create a window hidden behind the taskbar?&#60;/p&#62;&#10;
+            &#60;p&#62;&#60;a href=&#34;https://lobste.rs/s/ij37mt/websites_use_your_cpu_mine&#34;&#62;Comments&#60;/a&#62;&#60;/p&#62;
+        </description>
+          <category>javascript</category>
+          <category>browsers</category>
+          <category>web</category>
+      </item>
+      <item>
+        <title>Kubernetes: Getting Started</title>
+        <link>https://chrisshort.net/kubernetes-getting-started/</link>
+        <guid isPermaLink="false">https://lobste.rs/s/l4cnu7</guid>
+        <author>ChrisShort</author>
+        <pubDate>Fri, 01 Dec 2017 08:25:44 -0600</pubDate>
+        <comments>https://lobste.rs/s/l4cnu7/kubernetes_getting_started</comments>
+        <description>
+          &#60;p&#62;How do you get started with &#8220;an open-source system for automating deployment, scaling, and management of containerized applications&#8221;?&#60;/p&#62;&#10;
+            &#60;p&#62;&#60;a href=&#34;https://lobste.rs/s/l4cnu7/kubernetes_getting_started&#34;&#62;Comments&#60;/a&#62;&#60;/p&#62;
+        </description>
+          <category>devops</category>
+      </item>
+      <item>
+        <title>Introduction to parser combinators</title>
+        <link>https://blog.jcoglan.com/2017/07/06/introduction-to-parser-combinators/?</link>
+        <guid isPermaLink="false">https://lobste.rs/s/lkls1t</guid>
+        <author>pushcx</author>
+        <pubDate>Fri, 01 Dec 2017 10:07:20 -0600</pubDate>
+        <comments>https://lobste.rs/s/lkls1t/introduction_parser_combinators</comments>
+        <description>
+          
+            &#60;p&#62;&#60;a href=&#34;https://lobste.rs/s/lkls1t/introduction_parser_combinators&#34;&#62;Comments&#60;/a&#62;&#60;/p&#62;
+        </description>
+          <category>ruby</category>
+          <category>compilers</category>
+      </item>
+      <item>
+        <title>Write your next Ethereum Contract in Pyramid Scheme</title>
+        <link>http://www.michaelburge.us/2017/11/28/write-your-next-ethereum-contract-in-pyramid-scheme.html</link>
+        <guid isPermaLink="false">https://lobste.rs/s/wmahbr</guid>
+        <author>MichaelBurge</author>
+        <pubDate>Thu, 30 Nov 2017 11:36:15 -0600</pubDate>
+        <comments>https://lobste.rs/s/wmahbr/write_your_next_ethereum_contract</comments>
+        <description>
+          
+            &#60;p&#62;&#60;a href=&#34;https://lobste.rs/s/wmahbr/write_your_next_ethereum_contract&#34;&#62;Comments&#60;/a&#62;&#60;/p&#62;
+        </description>
+          <category>lisp</category>
+          <category>cryptocurrencies</category>
+          <category>compilers</category>
+      </item>
+      <item>
+        <title>IoT: The Internet of Terror If it seems like the sky is falling, that&#39;s because it is</title>
+        <link>http://queue.acm.org/detail.cfm?id=3121440</link>
+        <guid isPermaLink="false">https://lobste.rs/s/5rbqfi</guid>
+        <author>unbalancedparentheses</author>
+        <pubDate>Fri, 01 Dec 2017 14:08:53 -0600</pubDate>
+        <comments>https://lobste.rs/s/5rbqfi/iot_internet_terror_if_it_seems_like_sky_is</comments>
+        <description>
+          
+            &#60;p&#62;&#60;a href=&#34;https://lobste.rs/s/5rbqfi/iot_internet_terror_if_it_seems_like_sky_is&#34;&#62;Comments&#60;/a&#62;&#60;/p&#62;
+        </description>
+          <category>security</category>
+          <category>networking</category>
+      </item>
+      <item>
+        <title>Breaking the Enigma Code With Rust</title>
+        <link>https://kevinyap.ca/2017/04/breaking-the-enigma-code-with-rust/</link>
+        <guid isPermaLink="false">https://lobste.rs/s/x6ozyz</guid>
+        <author>davidjpeacock</author>
+        <pubDate>Fri, 01 Dec 2017 19:15:18 -0600</pubDate>
+        <comments>https://lobste.rs/s/x6ozyz/breaking_enigma_code_with_rust</comments>
+        <description>
+          
+            &#60;p&#62;&#60;a href=&#34;https://lobste.rs/s/x6ozyz/breaking_enigma_code_with_rust&#34;&#62;Comments&#60;/a&#62;&#60;/p&#62;
+        </description>
+          <category>rust</category>
+          <category>crypto</category>
+      </item>
+  </channel>
+</rss>
