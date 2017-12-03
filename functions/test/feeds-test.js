@@ -14,9 +14,6 @@ const feedUtils = require('../feed-utils');
 
 // mocks
 const sources = require('./sources-mock');
-const feedMock = fs.readFileSync(path.join(process.cwd(), 'test/rss-mock.xml'), {
-  encoding: 'utf-8'
-});
 const jsonMock = require('./feeds-json-mock');
 
 describe('getFeeds', () => {
