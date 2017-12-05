@@ -7,6 +7,7 @@ const functions = require('firebase-functions');
 // The Firebase Admin SDK to access the Firebase Realtime Database.
 const admin = require('firebase-admin');
 admin.initializeApp(functions.config().firebase);
+const db = admin.firestore();
 
 // Take the text parameter passed to this HTTP endpoint and insert it into the
 // Realtime Database under the path /messages/:pushId/original
@@ -14,14 +15,27 @@ exports.addMessage = functions.https.onRequest((req, res) => {
   // Grab the text parameter.
   const original = req.query.text;
   // Push the new message into the Realtime Database using the Firebase Admin SDK.
-  admin
-    .database()
-    .ref('/messages')
-    .push({original})
+  const docRef = db.collection('shared').doc('articles');
+
+  var setArticle = docRef.set({
+    name: original
+  });
+
+  setArticle
     .then(snapshot => {
-      // Redirect with 303 SEE OTHER to the URL of the pushed object in the Firebase console.
-      res.redirect(303, snapshot.ref);
+      res.status(200).send('its cool');
+    })
+    .catch(err => {
+      res.status(500).send(err);
     });
+  // admin
+  //   .database()
+  //   .ref('/messages')
+  //   .push({original})
+  //   .then(snapshot => {
+  //     // Redirect with 303 SEE OTHER to the URL of the pushed object in the Firebase console.
+  //     res.redirect(303, snapshot.ref);
+  //   });
 });
 
 // Listens for new messages added to /messages/:pushId/original and creates an
