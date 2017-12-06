@@ -16,11 +16,9 @@ class Article {
     this.feedsrc = feedsrc;
     this.createdOn = new Date(Date.now());
     this.opengraph = {};
-    this.labels = labels;
+    this.labels = labels || [];
     this.sentiment = {};
   }
 }
 
-module.exports = {
-  Article
-};
+module.exports = Article;

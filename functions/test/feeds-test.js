@@ -13,8 +13,8 @@ const nock = require('nock');
 const feedUtils = require('../feed-utils');
 
 // mocks
-const sources = require('./sources-mock');
-const jsonMock = require('./feeds-json-mock');
+const sources = require('./mocks/sources-mock');
+const jsonMock = require('./mocks/feeds-json-mock');
 
 describe('getFeeds', function() {
   this.timeout(10000);
@@ -74,11 +74,16 @@ describe('cleanObjects', () => {
   });
 });
 
-describe('processFlow', () => {
+describe('processFlow', function() {
+  this.timeout(10000);
   // orchestrate whole feed-getting, filtering and returning json thing
   let content;
 
   before(done => {
+    // deps
+    require('mocha');
+    const chai = require('chai');
+    const expect = chai.expect;
     feedUtils
       .processFlow(sources)
       .then(data => {

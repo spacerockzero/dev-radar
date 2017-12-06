@@ -55,7 +55,26 @@ exports.getFeedContent = functions.https.onRequest((req, res) => {
   feedUtils
     .processFlow(sources)
     .then(content => {
-      res.status(200).send(content);
+      const docRef = db.collection('public').doc('articles');
+      const item = content[0];
+      let article = new article({
+        title: item.title,
+        link: item.link,
+        feedsrc: item.feedsrc,
+        labels: item.labels
+      });
+      const setArticle = docRef.set(article);
+
+      setArticle
+        .then(snapshot => {
+          console.log('document write success:', snapshot);
+          res.status(200).send('its cool');
+        })
+        .catch(err => {
+          console.error(err);
+          res.status(500).send(err);
+        });
+      // res.status(200).send(content);
     })
     .catch(err => {
       res.status(500).send(err);
