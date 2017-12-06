@@ -16,7 +16,8 @@ const feedUtils = require('../feed-utils');
 const sources = require('./sources-mock');
 const jsonMock = require('./feeds-json-mock');
 
-describe('getFeeds', () => {
+describe('getFeeds', function() {
+  this.timeout(10000);
   // get feeds, flatten content, add feedsrc
   let flatFeeds;
 
