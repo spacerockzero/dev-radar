@@ -11,7 +11,7 @@
     "lint": "eslint ."
   },
   "eslintConfig": {
-    "extends": "eslint-config-groupon-node6",
+    "extends": "eslint-config-airbnb-base",
     "env": {
       "node": true,
       "mocha": true
@@ -29,7 +29,10 @@
   "devDependencies": {
     "chai": "^4.1.2",
     "eslint": "^4.12.1",
+    "eslint-config-airbnb-base": "^12.1.0",
     "eslint-config-groupon-node6": "^4.1.2",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^2.1.4",
     "eslint-plugin-prettier": "^2.3.1",
     "mocha": "^4.0.1",
     "nock": "^9.1.4",

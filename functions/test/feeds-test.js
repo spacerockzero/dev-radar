@@ -1,6 +1,7 @@
 // deps
 require('mocha');
 const chai = require('chai');
+
 const expect = chai.expect;
 const pify = require('pify');
 const fs = require('fs');
@@ -16,20 +17,20 @@ const feedUtils = require('../feed-utils');
 const sources = require('./mocks/sources-mock');
 const jsonMock = require('./mocks/feeds-json-mock');
 
-describe('getFeeds', function() {
+describe('getFeeds', function () {
   this.timeout(10000);
   // get feeds, flatten content, add feedsrc
   let flatFeeds;
 
-  before(done => {
+  before((done) => {
     feedUtils
       .getFeeds(sources)
-      .then(flat => {
+      .then((flat) => {
         flatFeeds = flat;
         // console.log(flatFeeds);
         done();
       })
-      .catch(err => {
+      .catch((err) => {
         console.error(err);
         done();
       });
@@ -74,23 +75,23 @@ describe('cleanObjects', () => {
   });
 });
 
-describe('processFlow', function() {
+describe('processFlow', function () {
   this.timeout(10000);
   // orchestrate whole feed-getting, filtering and returning json thing
   let content;
 
-  before(done => {
+  before((done) => {
     // deps
     require('mocha');
     const chai = require('chai');
     const expect = chai.expect;
     feedUtils
       .processFlow(sources)
-      .then(data => {
+      .then((data) => {
         content = data;
         done();
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
         done();
       });

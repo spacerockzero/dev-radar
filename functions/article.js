@@ -10,7 +10,9 @@
 //   sentiment
 
 class Article {
-  constructor({title, link, feedsrc, labels}) {
+  constructor({
+    title, link, feedsrc, labels,
+  }) {
     this.title = title;
     this.link = link;
     this.feedsrc = feedsrc;

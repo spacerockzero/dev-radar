@@ -1,7 +1,6 @@
 // deps
 require('mocha');
-const chai = require('chai');
-const expect = chai.expect;
+const { expect } = require('chai');
 const Article = require('../article');
 
 describe('Article constructor', () => {
@@ -10,7 +9,7 @@ describe('Article constructor', () => {
       title: 'A good article',
       link: 'https://www.jakobanderson.com',
       feedsrc: 'hackernews',
-      labels: ['performance', 'nodejs']
+      labels: ['performance', 'nodejs'],
     });
     it('should exist', () => expect(article).to.exist);
     it('should be an object', () => expect(article).to.be.an('Object'));
