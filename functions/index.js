@@ -15,7 +15,7 @@ exports.addMessage = functions.https.onRequest((req, res) => {
   // Grab the text parameter.
   const original = req.query.text;
   // Push the new message into the Realtime Database using the Firebase Admin SDK.
-  const docRef = db.collection('shared').doc('articles');
+  const docRef = db.collection('test').doc('articles');
 
   var setArticle = docRef.set({
     name: original
@@ -74,7 +74,6 @@ exports.getFeedContent = functions.https.onRequest((req, res) => {
           console.error(err);
           res.status(500).send(err);
         });
-      // res.status(200).send(content);
     })
     .catch(err => {
       res.status(500).send(err);
