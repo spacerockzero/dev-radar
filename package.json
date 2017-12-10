@@ -30,7 +30,7 @@
     "chai": "^4.1.2",
     "eslint": "^4.5.0",
     "eslint-config-synacor": "^1.1.0",
-    "eslint-plugin-import": "^2.8.0",r
+    "eslint-plugin-import": "^2.8.0",
     "if-env": "^1.0.0",
     "mocha": "^4.0.1",
     "nyc": "^11.3.0",
