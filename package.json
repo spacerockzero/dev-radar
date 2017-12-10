@@ -8,7 +8,7 @@
     "build": "preact build",
     "serve": "preact build && preact serve",
     "dev": "preact watch",
-    "lint": "eslint src",
+    "lint": "eslint src && eslint functions",
     "test": "nyc mocha ./functions/test/*-test.js",
     "coverage": "NODE_ENV=test nyc report --reporter=text-lcov"
   },
@@ -26,9 +26,11 @@
   ],
   "repository": "https://github.com/spacerockzero/dev-radar",
   "devDependencies": {
+    "babel-eslint": "^8.0.3",
     "chai": "^4.1.2",
     "eslint": "^4.5.0",
     "eslint-config-synacor": "^1.1.0",
+    "eslint-plugin-import": "^2.8.0",r
     "if-env": "^1.0.0",
     "mocha": "^4.0.1",
     "nyc": "^11.3.0",
