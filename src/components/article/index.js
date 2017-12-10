@@ -1,33 +1,32 @@
 import { h, Component } from 'preact';
 import Card from 'preact-material-components/Card';
-import ArticleList from '../../components/articleList';
 import 'preact-material-components/Card/style.css';
 import 'preact-material-components/Button/style.css';
-import style from './style';
+// import style from './style';
 
-export default class Home extends Component {
-	render() {
+export default class Article extends Component {
+	render(state, props) {
 		return (
-			<div class={style.home}>
-				<h1>Home route</h1>
-				<ArticleList />
-				{/* <Card>
+			<article className="article">
+				<Card>
 					<Card.Primary>
-						<Card.Title>Home card</Card.Title>
-						<Card.Subtitle>Welcome to home route</Card.Subtitle>
+						<Card.Title>{state.feedsrc}</Card.Title>
+						<Card.Subtitle>
+							<a href={state.link}>{state.title}</a>
+						</Card.Subtitle>
 					</Card.Primary>
-					<Card.SupportingText>
+					{/* <Card.SupportingText>
 						Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
 						laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
 						architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas
 						sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
 						voluptatem sequi nesciunt.
-					</Card.SupportingText>
-					<Card.Actions>
+					</Card.SupportingText> */}
+					{/* <Card.Actions>
 						<Card.Action>OKAY</Card.Action>
-					</Card.Actions>
-				</Card> */}
-			</div>
+					</Card.Actions> */}
+				</Card>
+			</article>
 		);
 	}
 }
