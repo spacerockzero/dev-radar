@@ -1,4 +1,5 @@
 // Articles Utilities
+const hash = require('object-hash');
 
 // Article:
 //   title,
@@ -9,18 +10,25 @@
 //   labels,
 //   sentiment
 
-class Article {
-  constructor({
-    title, link, feedsrc, labels,
-  }) {
-    this.title = title;
-    this.link = link;
-    this.feedsrc = feedsrc;
-    this.createdOn = new Date(Date.now());
-    this.opengraph = {};
-    this.labels = labels || [];
-    this.sentiment = {};
-  }
+function makeArticle({
+  title, link, feedsrc, labels,
+}) {
+  return {
+    title,
+    link,
+    feedsrc,
+    createdOn: new Date(Date.now()),
+    opengraph: {},
+    labels: labels || [],
+    sentiment: {},
+  };
 }
 
-module.exports = Article;
+function getHash(articleInput) {
+  return hash(articleInput);
+}
+
+module.exports = {
+  makeArticle,
+  getHash,
+};
