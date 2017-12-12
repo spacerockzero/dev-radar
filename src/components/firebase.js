@@ -1,4 +1,4 @@
-const firebase = require('firebase');
+const firebase = require('firebase/app');
 require('firebase/firestore');
 
 let config = {
@@ -13,4 +13,4 @@ let config = {
 firebase.initializeApp(config);
 
 export default firebase;
-export const firestore = firebase.firestore();
+export let firestore = firebase.firestore();
