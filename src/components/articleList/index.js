@@ -1,6 +1,6 @@
 import { h, Component } from 'preact';
 import map from 'lodash.map';
-import { firebase, firestore } from '../firebase';
+import { firestore } from '../fire';
 import Article from '../article';
 // import style from './style';
 

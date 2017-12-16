@@ -1,6 +1,7 @@
-import firebase from '@firebase/app';
+import * as firebase from '@firebase/app';
 import '@firebase/firestore';
 
+console.log('firebase:', firebase);
 let config = {
 	apiKey: 'AIzaSyCDLzg1z67fO1nxguLdSRK3Tf5bDwgPsM4',
 	authDomain: 'dev-radar.firebaseapp.com',
@@ -10,7 +11,7 @@ let config = {
 	messagingSenderId: '549078923980'
 };
 
-firebase.initializeApp(config);
+firebase.default.initializeApp(config);
 
-export default firebase;
-export const firestore = firebase.firestore();
+// export default firebase.default;
+export const firestore = firebase.default.firestore();

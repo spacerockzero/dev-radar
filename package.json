@@ -22,7 +22,6 @@
 		}
 	},
 	"eslintIgnore": ["build/*"],
-	"browserslist": ["last 1 versions"],
 	"repository": "https://github.com/spacerockzero/dev-radar",
 	"devDependencies": {
 		"babel-eslint": "^8.0.3",
