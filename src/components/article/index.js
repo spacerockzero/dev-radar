@@ -15,6 +15,9 @@ export default class Article extends Component {
 							<a href={state.link}>{state.title}</a>
 						</Card.Subtitle>
 					</Card.Primary>
+					<Card.SupportingText>
+						Created on: {state.createdOn.toDateString()}, {state.createdOn.toTimeString()}
+					</Card.SupportingText>
 					{/* <Card.SupportingText>
 						Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
 						laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
