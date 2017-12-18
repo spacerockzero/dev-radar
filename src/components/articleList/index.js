@@ -3,7 +3,9 @@ import map from 'lodash.map';
 import sortby from 'lodash.sortby';
 import { firestore } from '../fire';
 import Article from '../article';
-// import style from './style';
+import Button from 'preact-material-components/Button';
+import 'preact-material-components/Button/style.css';
+import style from './style';
 
 export default class ArticleList extends Component {
 	constructor(props) {
@@ -17,7 +19,7 @@ export default class ArticleList extends Component {
 		const articlesRef = firestore.collection('publicArticles');
 		// initial load
 		articlesRef
-			.orderBy('createdOn')
+			.orderBy('createdOn', 'desc')
 			.limit(50)
 			.get()
 			.then(snapshot => {
@@ -33,13 +35,17 @@ export default class ArticleList extends Component {
 						if (change.type === 'added' && change.doc.metadata.fromCache === false) {
 							const art = change.doc.data();
 							this.state.newArticles.push(art);
+							this.setState({ newArticles: this.state.newArticles });
+							// console.log('this.state.newArticles:', this.state.newArticles);
 						}
 					});
-					this.setState({ newArticles: this.state.newArticles });
-					console.log('this.state.newArticles:', this.state.newArticles);
-					// }
 				});
 			});
+
+		// queue feed update through firebase function
+		const updateFeed = window.fetch(
+			'https://us-central1-dev-radar.cloudfunctions.net/getFeedContent'
+		);
 	}
 
 	render(props, state) {
@@ -50,13 +56,17 @@ export default class ArticleList extends Component {
 			this.setState({ newArticles: [] });
 			this.setState({ articles: state.articles });
 		};
+		// const updateButtonClass = state.articles.length > 0 ? {style.show} : {style.hide};
+		const updateButton = (
+			<Button className="mdc-button mdc-button--raised" onClick={mergeNewArticles}>
+				Load {state.newArticles.length} new articles!
+			</Button>
+		);
 		return (
-			<section>
-				<button className="new-articles" onClick={mergeNewArticles}>
-					{state.newArticles.length} new articles
-				</button>
+			<articlelist className={style.articlelist}>
+				{state.newArticles.length > 0 ? updateButton : null}
 				{map(state.articles, (article, key) => <Article key={key} {...article} />)}
-			</section>
+			</articlelist>
 		);
 	}
 }
