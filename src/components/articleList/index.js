@@ -13,9 +13,6 @@ export default class ArticleList extends Component {
 			newArticles: []
 		};
 	}
-	mergeNewArticles(newArticleArray) {
-		// user asked to see new articles. merge them to top of articles list
-	}
 	componentWillMount() {
 		const articlesRef = firestore.collection('publicArticles');
 		// initial load
@@ -31,28 +28,35 @@ export default class ArticleList extends Component {
 
 				// when firestore detects new articles in the cloud
 				articlesRef.onSnapshot({ includeQueryMetadataChanges: false }, snapshot => {
-					const newArticles = [];
-					// console.log('snapshot:', snapshot);
 					snapshot.docChanges.forEach(change => {
-						console.log('change:', change);
+						// we want updates, but not the current data being added to local cache
 						if (change.type === 'added' && change.doc.metadata.fromCache === false) {
 							const art = change.doc.data();
-							console.log('new article: ', art);
-							newArticles.push(art);
+							this.state.newArticles.push(art);
 						}
 					});
-					console.log('additional: ', newArticles);
-					this.setState({ newArticles });
+					this.setState({ newArticles: this.state.newArticles });
 					console.log('this.state.newArticles:', this.state.newArticles);
+					// }
 				});
 			});
-		// .orderBy('createdOn', 'desc');
-		// .limit(10)
 	}
 
 	render(props, state) {
+		const mergeNewArticles = e => {
+			// user asked to see new articles. merge them to top of articles list
+			console.log('mergeNewArticles!');
+			state.articles.unshift(...state.newArticles);
+			this.setState({ newArticles: [] });
+			this.setState({ articles: state.articles });
+		};
 		return (
-			<section>{map(state.articles, (article, key) => <Article key={key} {...article} />)}</section>
+			<section>
+				<button className="new-articles" onClick={mergeNewArticles}>
+					{state.newArticles.length} new articles
+				</button>
+				{map(state.articles, (article, key) => <Article key={key} {...article} />)}
+			</section>
 		);
 	}
 }

@@ -17,6 +17,7 @@ function saveArticle(article) {
   return docRef.set(article);
 }
 
+// get feeds and add new uniques to firestore
 exports.getFeedContent = functions.https.onRequest((req, res) => {
   feedUtils
     .processFlow(sources)
