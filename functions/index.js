@@ -19,20 +19,30 @@ function saveArticle(article) {
 
 // get feeds and add new uniques to firestore
 exports.getFeedContent = functions.https.onRequest((req, res) => {
+  // return early so this function doesn't time out before finishing the feed/db work
+  res.status(200).send('Updating Feeds...');
+  console.log('after res');
+  console.time('getFeeds');
   feedUtils
     .processFlow(sources)
-    .then(content =>
-      content.map(item =>
+    .then((content) => {
+      console.timeEnd('getFeeds');
+      return content.map(item =>
         makeArticle({
           title: item.title,
           link: item.link,
           feedsrc: item.feedsrc,
           labels: item.labels,
-        })))
+        }));
+    })
     .then((articles) => {
+      // speed up db saving. so slow it times out most of the time lately
+      console.time('db');
       const dbProms = articles.map(article => saveArticle(article));
-      return Promise.all(dbProms)
-        .then(results => res.status(200).send(results))
-        .catch(err => res.status(500).send(err));
+      return Promise.all(dbProms).then(() => {
+        console.timeEnd('db');
+      });
+      // .then(results => res.status(200).send(results))
+      // .catch(err => res.status(500).send(err));
     });
 });
