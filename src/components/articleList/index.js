@@ -20,7 +20,7 @@ export default class ArticleList extends Component {
 		// initial load
 		articlesRef
 			.orderBy('createdOn', 'desc')
-			.limit(50)
+			.limit(100)
 			.get()
 			.then(snapshot => {
 				const arts = [];
