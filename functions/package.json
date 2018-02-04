@@ -10,6 +10,9 @@
     "test": "mocha test/*-test.js",
     "lint": "eslint ."
   },
+  "engines": {
+    "node": "6"
+  },
   "eslintConfig": {
     "extends": "eslint-config-airbnb-base",
     "env": {
