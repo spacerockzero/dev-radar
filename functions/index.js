@@ -16,6 +16,7 @@ const db = admin.firestore();
 // METHODS
 // save a a batch of articles
 function saveArticles(articles) {
+  console.time('db');
   const collectionRef = db.collection('publicArticles');
   const batch = db.batch();
   articles.forEach((article) => {
@@ -33,9 +34,8 @@ exports.updateFeedContent = functions.https.onRequest((req, res) => {
     return res.status(403).send('Forbidden!');
   }
   cors(req, res, () => {
-    console.log('after res');
     console.time('updateFeedContent');
-    feedUtils
+    return feedUtils
       .processFlow(sources)
       .then((content) => {
         console.timeEnd('getFeeds');
@@ -48,9 +48,12 @@ exports.updateFeedContent = functions.https.onRequest((req, res) => {
           }));
       })
       .then((articles) => {
-        console.time('db');
         console.log('before save articles:');
         return saveArticles(articles)
+          .then((results) => {
+            console.time('db');
+            return results;
+          })
           .then(results => res.status(200).send(results))
           .catch(err => res.status(500).send(err));
       });
@@ -62,7 +65,7 @@ exports.getArticles = functions.https.onRequest((req, res) => {
   if (req.method === 'PUT') {
     return res.status(403).send('Forbidden!');
   }
-  cors(req, res, () => {
+  return cors(req, res, () =>
     db
       .collection('publicArticles')
       .limit(100)
@@ -75,6 +78,5 @@ exports.getArticles = functions.https.onRequest((req, res) => {
         });
         return res.status(200).send(articles);
       })
-      .catch(err => Promise.reject(err));
-  });
+      .catch(err => Promise.reject(err)));
 });

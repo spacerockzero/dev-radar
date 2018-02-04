@@ -13,7 +13,8 @@ export default class ArticleList extends Component {
 		super(props);
 		this.state = {
 			articles: [],
-			newArticles: []
+			newArticles: [],
+			loading: true
 		};
 	}
 
@@ -38,6 +39,7 @@ export default class ArticleList extends Component {
 		let oldArticles = this.getLocalArticles();
 		if (oldArticles) {
 			this.setState({ articles: oldArticles });
+			this.setState({ loading: false });
 		}
 		// get new articles from api
 		window
@@ -50,6 +52,7 @@ export default class ArticleList extends Component {
 				this.setState({ newArticles: uniqNew });
 				// If we didn't have old articles to show, but now have new ones, show them
 				if (this.state.articles.length < 1 && this.state.newArticles.length > 1) {
+					this.setState({ loading: false });
 					this.mergeNewArticles();
 				}
 			})
@@ -83,9 +86,11 @@ export default class ArticleList extends Component {
 				Load {state.newArticles.length} new articles!
 			</Button>
 		);
+		const loadingSpinner = <img src="/assets/loading.svg" />;
 		return (
 			<articlelist className={style.articlelist}>
 				{state.newArticles.length > 0 ? updateButton : null}
+				{state.loading === true ? loadingSpinner : null}
 				{map(state.articles, (article, key) => <Article key={key} {...article} />)}
 			</articlelist>
 		);

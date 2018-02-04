@@ -9688,6 +9688,8 @@ function articleList__inherits(subClass, superClass) { if (typeof superClass !==
 
 
 
+var articleList__ref = Object(preact_min["h"])('img', { src: '/assets/loading.svg' });
+
 var articleList_ArticleList = function (_Component) {
 	articleList__inherits(ArticleList, _Component);
 
@@ -9698,7 +9700,8 @@ var articleList_ArticleList = function (_Component) {
 
 		_this.state = {
 			articles: [],
-			newArticles: []
+			newArticles: [],
+			loading: true
 		};
 		return _this;
 	}
@@ -9725,6 +9728,7 @@ var articleList_ArticleList = function (_Component) {
 		var oldArticles = this.getLocalArticles();
 		if (oldArticles) {
 			this.setState({ articles: oldArticles });
+			this.setState({ loading: false });
 		}
 		// get new articles from api
 		window.fetch('/getArticles') // prod
@@ -9737,6 +9741,7 @@ var articleList_ArticleList = function (_Component) {
 			_this2.setState({ newArticles: uniqNew });
 			// If we didn't have old articles to show, but now have new ones, show them
 			if (_this2.state.articles.length < 1 && _this2.state.newArticles.length > 1) {
+				_this2.setState({ loading: false });
 				_this2.mergeNewArticles();
 			}
 		}).catch(function (err) {
@@ -9768,10 +9773,12 @@ var articleList_ArticleList = function (_Component) {
 			state.newArticles.length,
 			' new articles!'
 		);
+		var loadingSpinner = articleList__ref;
 		return Object(preact_min["h"])(
 			'articlelist',
 			{ className: articleList_style_default.a.articlelist },
 			state.newArticles.length > 0 ? updateButton : null,
+			state.loading === true ? loadingSpinner : null,
 			lodash_es_map(state.articles, function (article, key) {
 				return Object(preact_min["h"])(article_Article, articleList__extends({ key: key }, article));
 			})
@@ -10373,7 +10380,6 @@ module.exports = {"hide":"hide__3srMN","show":"show__BcLgQ","articlelist":"artic
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"home":"home__MseGd"};
 
 /***/ }),
 
