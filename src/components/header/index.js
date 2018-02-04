@@ -56,18 +56,18 @@ export default class Header extends Component {
 			<div>
 				<Toolbar className="toolbar">
 					<Toolbar.Row>
-						<Toolbar.Section align-start>
-							<Toolbar.Icon menu onClick={this.openDrawer}>
+						<Toolbar.Section>
+							{/* <Toolbar.Icon menu onClick={this.openDrawer}>
 								menu
-							</Toolbar.Icon>
-							<Toolbar.Title>Dev Radar</Toolbar.Title>
+							</Toolbar.Icon> */}
+							<Toolbar.Title>[ DEV.RADAR ]</Toolbar.Title>
 						</Toolbar.Section>
-						<Toolbar.Section align-end onClick={this.openSettings}>
+						{/* <Toolbar.Section align-end onClick={this.openSettings}>
 							<Toolbar.Icon>settings</Toolbar.Icon>
-						</Toolbar.Section>
+						</Toolbar.Section> */}
 					</Toolbar.Row>
 				</Toolbar>
-				<Drawer.TemporaryDrawer ref={this.drawerRef}>
+				{/* <Drawer.TemporaryDrawer ref={this.drawerRef}>
 					<Drawer.TemporaryDrawerContent>
 						<List>
 							<List.LinkItem onClick={this.goHome}>
@@ -80,8 +80,8 @@ export default class Header extends Component {
 							</List.LinkItem>
 						</List>
 					</Drawer.TemporaryDrawerContent>
-				</Drawer.TemporaryDrawer>
-				<Dialog ref={this.dialogRef}>
+				</Drawer.TemporaryDrawer> */}
+				{/* <Dialog ref={this.dialogRef}>
 					<Dialog.Header>Settings</Dialog.Header>
 					<Dialog.Body>
 						<div>
@@ -91,7 +91,7 @@ export default class Header extends Component {
 					<Dialog.Footer>
 						<Dialog.FooterButton accept>okay</Dialog.FooterButton>
 					</Dialog.Footer>
-				</Dialog>
+				</Dialog> */}
 			</div>
 		);
 	}

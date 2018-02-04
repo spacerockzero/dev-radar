@@ -4,8 +4,17 @@ html, body {
 	padding: 0;
 	margin: 0;
 	/* background: #FAFAFA; */
-	background: #ccc;
-	/* background: lightsteelblue; */
+	/* background: #ccc; */
+  /* background: lightsteelblue; */
+  /* background: #67B26F;  fallback for old browsers */
+  /* background: -webkit-linear-gradient(to right, #4ca2cd, #67B26F);  Chrome 10-25, Safari 5.1-6 */
+  /* background: linear-gradient(to right, #4ca2cd, #67B26F); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+  background: #FF5F6D;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #FFC371, #FF5F6D);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #FFC371, #FF5F6D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+  
 	font-family: 'Helvetica Neue', arial, sans-serif;
 	font-weight: 400;
 	color: #444;
@@ -14,14 +23,14 @@ html, body {
 }
 
 /* fallback */
-@font-face {
+/* @font-face {
   font-family: 'Material Icons';
   font-style: normal;
   font-weight: 400;
   src: url(https://fonts.gstatic.com/s/materialicons/v29/2fcrYFNaTjcS6g4U3t-Y5UEw0lE80llgEseQY3FEmqw.woff2) format('woff2');
-}
+} */
 
-.material-icons {
+/* .material-icons {
   font-family: 'Material Icons';
   font-weight: normal;
   font-style: normal;
@@ -35,7 +44,7 @@ html, body {
   direction: ltr;
   -webkit-font-feature-settings: 'liga';
   -webkit-font-smoothing: antialiased;
-}
+} */
 
 * {
 	box-sizing: border-box;
@@ -49,6 +58,13 @@ html, body {
 	background-color: #333;
 	color: #fff;
 }
+header {
+  /* background: #333399 */
+  background: #ff4b1f;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #ff9068, #ff4b1f);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #ff9068, #ff4b1f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+}
 articlelist > img {
   margin: auto;
   display: flex;
@@ -58,4 +74,14 @@ article {
   background-color: #fafafa;
   margin: 0.5em 0.25em;
   border-radius: 0.25em;
+}
+
+a {
+  color: #ff4b1f;
+}
+a:visited {
+  color: #ff9068;
+}
+.mdc-toolbar__title {
+  text-align: center
 }
