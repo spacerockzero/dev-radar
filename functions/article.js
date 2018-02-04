@@ -27,6 +27,7 @@ function makeArticle({
     link,
     feedsrc,
     createdOn: new Date(Date.now()),
+    // pubDate,
     opengraph: {},
     labels: labels || [],
     sentiment: {},

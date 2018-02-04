@@ -2,6 +2,8 @@ const jsync = require('asyncawait/async');
 const jwait = require('asyncawait/await');
 const pify = require('pify');
 const parser = require('rss-parser');
+const got = require('got');
+const extractor = require('unfluff');
 
 const parseURL = pify(parser.parseURL);
 const trim = require('trim');
@@ -26,7 +28,7 @@ const cleanObjects = (objects) => {
       title: trim(item.title),
       link: trim(item.link),
       feedsrc: item.feedsrc,
-      pubDate: item.pubDate,
+      // pubDate: item.pubDate,
     };
     return cleanObj;
   });
@@ -39,8 +41,16 @@ const processFlow = jsync((sources) => {
   return cleanedContent;
 });
 
+const scrapeUrl = jsync((targetUrl) => {
+  // scrape link url for meta, ogdata
+  const { body: html, url } = jwait(got(targetUrl));
+  const metaData = extractor(html);
+  return metaData;
+});
+
 module.exports = {
   getFeeds,
   cleanObjects,
   processFlow,
+  scrapeUrl,
 };

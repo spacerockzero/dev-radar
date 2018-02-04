@@ -6,10 +6,12 @@ import 'preact-material-components/Button/style.css';
 
 export default class Article extends Component {
 	render(state, props) {
+		const img = <img src="{state.image}" width="100%" />;
 		return (
 			<article className="article">
 				<Card>
 					<Card.Primary>
+						{state.image ? img : null}
 						<Card.Subtitle>
 							<a href={state.link}>{state.title}</a>
 						</Card.Subtitle>

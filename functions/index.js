@@ -33,12 +33,12 @@ exports.updateFeedContent = functions.https.onRequest((req, res) => {
   if (req.method === 'PUT') {
     return res.status(403).send('Forbidden!');
   }
-  cors(req, res, () => {
+  return cors(req, res, () => {
     console.time('updateFeedContent');
     return feedUtils
       .processFlow(sources)
       .then((content) => {
-        console.timeEnd('getFeeds');
+        console.timeEnd('updateFeedContent');
         return content.map(item =>
           makeArticle({
             title: item.title,
@@ -51,10 +51,10 @@ exports.updateFeedContent = functions.https.onRequest((req, res) => {
         console.log('before save articles:');
         return saveArticles(articles)
           .then((results) => {
-            console.time('db');
+            console.timeEnd('db');
             return results;
           })
-          .then(results => res.status(200).send(results))
+          .then(results => res.status(200).send('OK'))
           .catch(err => res.status(500).send(err));
       });
   });
@@ -68,7 +68,8 @@ exports.getArticles = functions.https.onRequest((req, res) => {
   return cors(req, res, () =>
     db
       .collection('publicArticles')
-      .limit(100)
+      .orderBy('createdOn', 'asc')
+      .limit(50)
       .get()
       .then((snapshot) => {
         const articles = [];
@@ -79,4 +80,30 @@ exports.getArticles = functions.https.onRequest((req, res) => {
         return res.status(200).send(articles);
       })
       .catch(err => Promise.reject(err)));
+});
+
+// When new docs are saved, go get their metadata for thumbnails and whatnot
+exports.getMeta = functions.firestore.document('publicArticles/{articleId}').onCreate((event) => {
+  // console.log('getMeta', event.data);
+  const doc = event.data.data();
+  console.log('doc:', doc);
+  const linkURL = doc.link;
+  console.log('link:', linkURL);
+  if (linkURL) {
+    feedUtils.scrapeUrl(linkURL).then((metadata) => {
+      console.log('metadata:', metadata);
+      if (metadata.image) {
+        db
+          .collection('publicArticles')
+          .doc(doc.id)
+          .update({ image: metadata.image })
+          .then((result) => {
+            console.log('db write result:', result);
+          })
+          .catch((err) => {
+            console.error('Err writing img to db:', err);
+          });
+      }
+    });
+  }
 });
