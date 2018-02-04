@@ -3,7 +3,9 @@ html, body {
 	width: 100%;
 	padding: 0;
 	margin: 0;
-	background: #FAFAFA;
+	/* background: #FAFAFA; */
+	background: #ccc;
+	/* background: lightsteelblue; */
 	font-family: 'Helvetica Neue', arial, sans-serif;
 	font-weight: 400;
 	color: #444;
@@ -46,4 +48,14 @@ html, body {
 .mdc-theme--dark {
 	background-color: #333;
 	color: #fff;
+}
+articlelist > img {
+  margin: auto;
+  display: flex;
+  width: 80%;
+}
+article {
+  background-color: #fafafa;
+  margin: 0.5em 0.25em;
+  border-radius: 0.25em;
 }

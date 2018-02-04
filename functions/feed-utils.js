@@ -26,6 +26,7 @@ const cleanObjects = (objects) => {
       title: trim(item.title),
       link: trim(item.link),
       feedsrc: item.feedsrc,
+      pubDate: item.pubDate,
     };
     return cleanObj;
   });
