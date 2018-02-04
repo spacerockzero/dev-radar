@@ -65,6 +65,10 @@ header {
   background: linear-gradient(to right, #ff9068, #ff4b1f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   
 }
+articlelist {
+  display: flex;
+  flex-direction: column;
+}
 articlelist > img {
   margin: auto;
   display: flex;
@@ -80,8 +84,19 @@ a {
   color: #ff4b1f;
 }
 a:visited {
-  color: #ff9068;
+  color: #ffa080;
 }
 .mdc-toolbar__title {
   text-align: center
+}
+.merge-button {
+  background: transparent;
+  border: 1px solid white;
+  border-radius: 0.25em;
+  margin: 0.25em auto;
+  /* width: 80%; */
+  color: white;
+  text-align: center;
+  padding: 0.75em 2em;
+  font-size: 100%;
 }

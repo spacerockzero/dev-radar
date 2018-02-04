@@ -9,6 +9,10 @@
 			{
 				"source": "/getArticles",
 				"function": "getArticles"
+			},
+			{
+				"source": "/updateFeedContent",
+				"function": "updateFeedContent"
 			}
 		]
 	},

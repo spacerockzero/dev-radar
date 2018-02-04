@@ -11,7 +11,7 @@
     "lint": "eslint ."
   },
   "engines": {
-    "node": "6"
+    "node": "6.11.1"
   },
   "eslintConfig": {
     "extends": "eslint-config-airbnb-base",
@@ -23,13 +23,15 @@
   "dependencies": {
     "asyncawait": "^1.0.6",
     "cors": "^2.8.4",
-    "firebase-admin": "~5.4.2",
+    "firebase-admin": "^5.8.2",
     "firebase-functions": "^0.8.1",
+    "got": "^8.0.3",
     "moment": "^2.20.0",
     "object-hash": "^1.2.0",
     "pify": "^3.0.0",
     "rss-parser": "^2.10.8",
-    "trim": "0.0.1"
+    "trim": "0.0.1",
+    "unfluff": "^3.0.0"
   },
   "private": true,
   "devDependencies": {
