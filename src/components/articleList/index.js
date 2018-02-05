@@ -59,7 +59,7 @@ export default class ArticleList extends Component {
 				// If we didn't have old articles to show, but now have new ones, show them
 				if (this.state.articles.length < 1 && this.state.newArticles.length > 1) {
 					this.setState({ loading: false });
-					// this.mergeNewArticles();
+					this.mergeNewArticles();
 				}
 			})
 			.catch(err => {
