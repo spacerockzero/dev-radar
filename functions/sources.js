@@ -59,11 +59,11 @@ module.exports = [
   //   type: 'rss',
   //   url: 'https://www.javascript.com/feed/rss',
   // },
-  {
-    name: 'JS Feeds',
-    type: 'rss',
-    url: 'http://jsfeeds.com/feed',
-  },
+  // {
+  //   name: 'JS Feeds',
+  //   type: 'rss',
+  //   url: 'http://jsfeeds.com/feed',
+  // },
   {
     name: 'Reddit /r/javascript',
     type: 'rss',
