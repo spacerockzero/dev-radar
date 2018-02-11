@@ -49,8 +49,8 @@ export default class ArticleList extends Component {
 		}
 		// get new articles from api
 		window
-			.fetch('/getArticles') // prod
-			// .fetch('http://localhost:5000/dev-radar/us-central1/getArticles') // localdev
+			// .fetch('/getArticles') // prod
+			.fetch('http://localhost:5000/dev-radar/us-central1/getArticles') // localdev
 			.then(data => data.json())
 			.then(articles => {
 				//do stuff
