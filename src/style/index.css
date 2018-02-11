@@ -9,15 +9,16 @@ html, body {
   /* background: #67B26F;  fallback for old browsers */
   /* background: -webkit-linear-gradient(to right, #4ca2cd, #67B26F);  Chrome 10-25, Safari 5.1-6 */
   /* background: linear-gradient(to right, #4ca2cd, #67B26F); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  
+
   background: #FF5F6D;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #FFC371, #FF5F6D);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #FFC371, #FF5F6D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  
-  
+
+
 	font-family: 'Helvetica Neue', arial, sans-serif;
 	font-weight: 400;
-	color: #444;
+  color: #444;
+  font-size: 18px;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
@@ -63,7 +64,7 @@ header {
   background: #ff4b1f;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #ff9068, #ff4b1f);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #ff9068, #ff4b1f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  
+
 }
 articlelist {
   display: flex;
@@ -99,4 +100,21 @@ a:visited {
   text-align: center;
   padding: 0.75em 2em;
   font-size: 100%;
+}
+article img {
+  width: 100%;
+}
+@media (min-width: 700px) {
+  article > .mdc-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  article > .mdc-card > a {
+    width: 30%;
+    margin-bottom: -.35em;
+  }
+  article .text-body {
+  }
 }

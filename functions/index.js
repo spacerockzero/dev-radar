@@ -86,24 +86,27 @@ exports.getArticles = functions.https.onRequest((req, res) => {
 exports.getMeta = functions.firestore.document('publicArticles/{articleId}').onCreate((event) => {
   // console.log('getMeta', event.data);
   const doc = event.data.data();
-  console.log('doc:', doc);
+  // console.log('doc:', doc);
   const linkURL = doc.link;
-  console.log('link:', linkURL);
+  // console.log('link:', linkURL);
   if (linkURL) {
     feedUtils.scrapeUrl(linkURL).then((metadata) => {
-      console.log('metadata:', metadata);
+      // console.log('metadata:', metadata);
+      console.log('metadata.image', metadata.image);
       if (metadata.image) {
-        db
+        return db
           .collection('publicArticles')
           .doc(doc.id)
           .update({ image: metadata.image })
           .then((result) => {
+            console.log('doc.id', doc.id);
+            console.log('image:', metadata.image);
             console.log('db write result:', result);
+            return metadata;
           })
-          .catch((err) => {
-            console.error('Err writing img to db:', err);
-          });
+          .catch(err => console.error('Err writing img to db:', err));
       }
+      return metadata;
     });
   }
 });

@@ -5,19 +5,25 @@ import 'preact-material-components/Button/style.css';
 // import style from './style';
 
 export default class Article extends Component {
-	render(state, props) {
-		const img = <img src="{state.image}" width="100%" />;
+	render(props, state) {
+		const img = (
+			<a href={props.link}>
+				<img src={props.image} width="100" />
+			</a>
+		);
 		return (
 			<article className="article">
 				<Card>
-					<Card.Primary>
-						{state.image ? img : null}
-						<Card.Subtitle>
-							<a href={state.link}>{state.title}</a>
-						</Card.Subtitle>
-						<Card.Title>{state.feedsrc}</Card.Title>
-					</Card.Primary>
-					<Card.SupportingText>{new Date(state.createdOn).toDateString()}</Card.SupportingText>
+					{props.image ? img : null}
+					<div class="text-body">
+						<Card.Primary>
+							<Card.Subtitle>
+								<a href={props.link}>{props.title}</a>
+							</Card.Subtitle>
+							<Card.Title>{props.feedsrc}</Card.Title>
+						</Card.Primary>
+						<Card.SupportingText>{new Date(props.createdOn).toDateString()}</Card.SupportingText>
+					</div>
 				</Card>
 			</article>
 		);
