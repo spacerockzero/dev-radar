@@ -12,7 +12,7 @@ export default class Article extends Component {
 			</a>
 		);
 		return (
-			<article className="article">
+			<article className="article" data-id={props.id}>
 				<Card>
 					{props.image ? img : null}
 					<div class="text-body">

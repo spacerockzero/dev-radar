@@ -68,7 +68,7 @@ exports.getArticles = functions.https.onRequest((req, res) => {
   return cors(req, res, () =>
     db
       .collection('publicArticles')
-      .orderBy('createdOn', 'asc')
+      .orderBy('createdOn', 'desc')
       .limit(50)
       .get()
       .then((snapshot) => {
