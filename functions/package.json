@@ -23,7 +23,9 @@
   "dependencies": {
     "asyncawait": "^1.0.6",
     "cors": "^2.8.4",
-    "firebase-admin": "^5.8.2",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "firebase-admin": "^5.8.1",
     "firebase-functions": "^0.8.1",
     "got": "^8.0.3",
     "moment": "^2.20.0",
