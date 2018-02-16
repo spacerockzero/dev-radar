@@ -26989,7 +26989,7 @@ var article_Article = function (_Component) {
 		);
 		return Object(preact_min["h"])(
 			'article',
-			{ className: 'article' },
+			{ className: 'article', 'data-id': props.id },
 			Object(preact_min["h"])(
 				preact_material_components_Card,
 				null,
@@ -27098,12 +27098,15 @@ var articleList_ArticleList = function (_Component) {
 
 		// get old articles from local, if exist
 		var oldArticles = this.getLocalArticles();
+		var latestDate = false;
 		if (oldArticles && oldArticles.length > 0) {
 			this.setState({ articles: oldArticles, loading: false });
+			latestDate = oldArticles[0].createdOn;
 			// this.setState({ loading: false });
 		}
 		// get new articles from api
-		window.fetch('/getArticles') // prod
+		var url = latestDate ? 'getArticles?earliest=' + latestDate : 'getArticles';
+		window.fetch(url) // prod
 		// .fetch('http://localhost:5000/dev-radar/us-central1/getArticles') // localdev
 		.then(function (data) {
 			return data.json();
