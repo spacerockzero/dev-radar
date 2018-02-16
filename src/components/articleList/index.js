@@ -43,13 +43,16 @@ export default class ArticleList extends Component {
 	componentDidMount() {
 		// get old articles from local, if exist
 		let oldArticles = this.getLocalArticles();
+		let latestDate = false;
 		if (oldArticles && oldArticles.length > 0) {
 			this.setState({ articles: oldArticles, loading: false });
+			latestDate = oldArticles[0].createdOn;
 			// this.setState({ loading: false });
 		}
 		// get new articles from api
+		const url = latestDate ? `getArticles?earliest=${latestDate}` : `getArticles`;
 		window
-			.fetch('/getArticles') // prod
+			.fetch(url) // prod
 			// .fetch('http://localhost:5000/dev-radar/us-central1/getArticles') // localdev
 			.then(data => data.json())
 			.then(articles => {
