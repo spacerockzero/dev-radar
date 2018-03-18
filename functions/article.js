@@ -20,8 +20,7 @@ function makeArticle({
 }) {
   return {
     id: getHash({
-      title,
-      link,
+      link
     }),
     title,
     link,
