@@ -118,3 +118,6 @@ article img {
   article .text-body {
   }
 }
+.mdc-card__title {
+  text-align: right;
+}
