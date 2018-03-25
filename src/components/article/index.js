@@ -10,7 +10,7 @@ export default class Article extends Component {
 		const img =
 			props.opengraph && props.opengraph.image ? (
 				<a href={props.link}>
-					<LazyLoad offsetTop={100}>
+					<LazyLoad offsetTop={1000}>
 						<img src={props.opengraph.image} width="100" />
 					</LazyLoad>
 				</a>
