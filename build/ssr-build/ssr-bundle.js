@@ -28256,8 +28256,8 @@ var articleList_ArticleList = function (_Component) {
 		window
 		// .fetch('/getArticles') // firebase prod
 		// .fetch('http://localhost:5000/dev-radar/us-central1/getArticles') // firebase localdev
-		// .fetch('https://dev-radar-server-prod.herokuapp.com/api/getfeed') // heroku prod
-		.fetch('http://localhost:5000/api/getfeed') // heroku localdev
+		.fetch('https://dev-radar-server-prod.herokuapp.com/api/getfeed') // heroku prod
+		// .fetch('http://localhost:5000/api/getfeed') // heroku localdev
 		.then(function (data) {
 			return data.json();
 		}).then(function (articles) {
