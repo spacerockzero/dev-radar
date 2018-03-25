@@ -26989,7 +26989,7 @@ var article_Article = function (_Component) {
 		);
 		return Object(preact_min["h"])(
 			'article',
-			{ className: 'article' },
+			{ className: 'article', 'data-id': props.id },
 			Object(preact_min["h"])(
 				preact_material_components_Card,
 				null,
@@ -27103,8 +27103,11 @@ var articleList_ArticleList = function (_Component) {
 			// this.setState({ loading: false });
 		}
 		// get new articles from api
-		window.fetch('/getArticles') // prod
-		// .fetch('http://localhost:5000/dev-radar/us-central1/getArticles') // localdev
+		window
+		// .fetch('/getArticles') // firebase prod
+		// .fetch('http://localhost:5000/dev-radar/us-central1/getArticles') // firebase localdev
+		.fetch('https://dev-radar-server-prod.herokuapp.com/api/getfeed') // heroku prod
+		// .fetch('http://localhost:5000/api/getfeed') // heroku localdev
 		.then(function (data) {
 			return data.json();
 		}).then(function (articles) {

@@ -49,8 +49,10 @@ export default class ArticleList extends Component {
 		}
 		// get new articles from api
 		window
-			.fetch('/getArticles') // prod
-			// .fetch('http://localhost:5000/dev-radar/us-central1/getArticles') // localdev
+			// .fetch('/getArticles') // firebase prod
+			// .fetch('http://localhost:5000/dev-radar/us-central1/getArticles') // firebase localdev
+			.fetch('https://dev-radar-server-prod.herokuapp.com/api/getfeed') // heroku prod
+			// .fetch('http://localhost:5000/api/getfeed') // heroku localdev
 			.then(data => data.json())
 			.then(articles => {
 				//do stuff
