@@ -2,8 +2,14 @@ import { h, Component } from 'preact';
 import { uniqBy, differenceBy, orderBy } from 'lodash-es';
 import Article from '../article';
 import VirtualList from 'react-virtual-list';
+import InfiniteScroll from 'react-infinite-scroller';
 // import 'preact-material-components/Button/style.css';
 import style from './style';
+
+const API_URL =
+	process.env.PREACT_APP_ENV === 'development'
+		? 'http://localhost:5000/api/getfeed'
+		: 'https://dev-radar-server-prod.herokuapp.com/api/getfeed';
 
 export default class ArticleList extends Component {
 	constructor(props) {
@@ -11,15 +17,17 @@ export default class ArticleList extends Component {
 		this.state = {
 			articles: [],
 			newArticles: [],
-			loading: true
+			loading: true,
+			currentPage: 1
 		};
+		this.getNewArticles = this.getNewArticles.bind(this);
 	}
 
 	setLocalArticles(articles) {
 		console.log('Saving current articles locally...');
 		const sorted = orderBy(articles, ['createdOn'], ['desc']);
-		// const sliced = sorted.slice(0, 50) || sorted;
-		const sliced = sorted;
+		// only save a few, so they load fast
+		const sliced = sorted.slice(0, 10) || sorted;
 		window.localStorage.setItem('articles', JSON.stringify(sliced));
 	}
 
@@ -36,24 +44,28 @@ export default class ArticleList extends Component {
 		return articles;
 	}
 
-	getNewArticles() {
+	getNewArticles(page = 1, limit = 25) {
 		console.log('Getting new articles!');
 		// get new articles from api
-		window
-			// .fetch('/getArticles') // firebase prod
-			// .fetch('http://localhost:5000/dev-radar/us-central1/getArticles') // firebase localdev
-			.fetch('https://dev-radar-server-prod.herokuapp.com/api/getfeed') // heroku prod
-			// .fetch('http://localhost:5000/api/getfeed') // heroku localdev
+		const params = { limit, page };
+		let url = new URL(API_URL);
+		Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
+		return window
+			.fetch(url)
 			.then(data => data.json())
 			.then(articles => {
-				//do stuff
-				const uniqNew = differenceBy(articles, this.state.articles, 'link');
-				this.setState({ newArticles: uniqNew });
-				// If we didn't have old articles to show, but now have new ones, show them
-				if (this.state.articles.length < 1 && this.state.newArticles.length > 1) {
+				if (articles.length > 0) {
+					// uniqueify, then set as articles array
+					const uniqNew = differenceBy(articles, this.state.articles, 'link');
+					this.setState({ newArticles: uniqNew, currentPage: this.state.currentPage + 1 });
 					this.setState({ loading: false });
 					this.mergeNewArticles();
 				}
+				else {
+					// no more articles in page
+					this.setState({ loading: false, currentPage: false });
+				}
+				return;
 			})
 			.catch(err => {
 				// do stuff
@@ -66,29 +78,22 @@ export default class ArticleList extends Component {
 		let oldArticles = this.getLocalArticles();
 		if (oldArticles && oldArticles.length > 0) {
 			this.setState({ articles: oldArticles, loading: false });
-			// this.setState({ loading: false });
 		}
-		this.getNewArticles();
-		// get new Articles every 15 minutes (900,000)
-		// or 1 minute (60,000)
-		window.setInterval(() => this.getNewArticles(), 900000);
 	}
 
 	mergeNewArticles() {
-		// user asked to see new articles. merge them to top of articles list
+		// user asked to see more articles. merge them to bottom of articles list
 		console.log('Merging new articles...');
 		const oldArticles = this.state.articles || [];
-		oldArticles.unshift(...this.state.newArticles);
+		// add new article pages at end, where user is scrolling
+		const combinedArticles = oldArticles.concat(this.state.newArticles);
 		// de-dupe these...
 		const unique =
 			this.state.articles.length === 0 && this.state.newArticles.length > 0
 				? this.state.newArticles
-				: uniqBy(oldArticles, 'link');
-		// TODO: consider reducing max number to prevent storage and render scaling issues down the road
-		// then save result in localstore for next load
+				: uniqBy(combinedArticles, 'link');
 		this.setLocalArticles(unique);
 		this.setState({ newArticles: [], articles: unique });
-		// this.setState({ articles: unique });
 	}
 
 	render(props, state) {
@@ -99,12 +104,32 @@ export default class ArticleList extends Component {
 			</button>
 		);
 		const loadingSpinner = <img src="/assets/loading.svg" />;
-		const MyVirtualList = VirtualList()(state.articles);
 		return (
 			<articlelist className={style.articlelist}>
-				{state.newArticles.length > 0 ? updateButton : null}
-				{state.loading === true ? loadingSpinner : null}
-				{state.articles.map((article, key) => <Article key={key} {...article} />)}
+				<InfiniteScroll
+					pageStart={0}
+					loadMore={this.getNewArticles}
+					hasMore={this.state.currentPage !== false || false}
+					loader={
+						<div className="loader" key={0}>
+							Loading ...
+						</div>
+					}
+				>
+					{state.newArticles.length > 0 ? updateButton : null}
+					{state.loading === true ? loadingSpinner : null}
+					{state.articles.map((article, key) => <Article key={key} {...article} />)}
+				</InfiniteScroll>
+				{state.currentPage === false ? (
+					<div className="quest-complete">
+						<div className="emoji">😊</div>
+						You have completed your quest.
+						<br />
+						The interwebs have been read.
+					</div>
+				) : (
+					''
+				)}
 			</articlelist>
 		);
 	}
