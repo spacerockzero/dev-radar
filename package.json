@@ -1,60 +1,58 @@
 {
-  "private": true,
-  "name": "dev-radar",
-  "version": "0.2.0",
-  "license": "MIT",
-  "engines": {
-    "node": "6.11.1"
-  },
-  "scripts": {
-    "start": "if-env NODE_ENV=production && npm run -s serve || npm run -s dev",
-    "build": "preact build",
-    "serve": "npm run build && preact serve",
-    "dev": "preact watch",
-    "lint": "eslint src && eslint functions",
-    "test": "nyc mocha ./functions/test/*-test.js",
-    "coverage": "NODE_ENV=test nyc report --reporter=text-lcov",
-    "postinstall": "cd functions && npm install && cd ../"
-  },
-  "eslintConfig": {
-    "extends": "eslint-config-synacor",
-    "rules": {
-      "no-unused-vars": "warn",
-      "react/sort-comp": "off",
-      "lines-around-comment": "off",
-      "react/prefer-stateless-function": "off"
-    }
-  },
-  "eslintIgnore": [
-    "build/*"
-  ],
-  "repository": "https://github.com/spacerockzero/dev-radar",
-  "devDependencies": {
-    "babel-eslint": "^8.0.3",
-    "chai": "^4.1.2",
-    "eslint": "^4.5.0",
-    "eslint-config-synacor": "^1.1.0",
-    "eslint-plugin-import": "^2.8.0",
-    "firebase-tools": "^3.17.4",
-    "if-env": "^1.0.0",
-    "mocha": "^4.0.1",
-    "nyc": "^11.3.0",
-    "preact-cli": "^2.0.0",
-    "preact-cli-plugin-env-vars": "^1.1.0",
-    "prettier": "1.8.2"
-  },
-  "dependencies": {
-    "asyncawait": "^1.0.6",
-    "firebase": "^4.8.0",
-    "lodash-es": "^4.17.4",
-    "lodash.map": "^4.6.0",
-    "lodash.sortby": "^4.7.0",
-    "preact": "^8.2.1",
-    "preact-compat": "^3.17.0",
-    "preact-material-components": "^1.2.4",
-    "preact-router": "^2.5.5",
-    "react-infinite-scroller": "^1.1.3",
-    "react-lazy-load": "^3.0.13",
-    "react-virtual-list": "^2.2.4"
-  }
+	"private": true,
+	"name": "dev-radar",
+	"version": "0.3.0",
+	"license": "MIT",
+	"engines": {
+		"node": "6.11.1"
+	},
+	"scripts": {
+		"start": "if-env NODE_ENV=production && npm run -s serve || npm run -s dev",
+		"build": "preact build",
+		"serve": "npm run build && preact serve",
+		"dev": "preact watch",
+		"lint": "eslint src && eslint functions",
+		"test": "nyc mocha ./functions/test/*-test.js",
+		"coverage": "NODE_ENV=test nyc report --reporter=text-lcov",
+		"postinstall": "cd functions && npm install && cd ../"
+	},
+	"eslintConfig": {
+		"extends": "eslint-config-synacor",
+		"rules": {
+			"no-unused-vars": "warn",
+			"react/sort-comp": "off",
+			"lines-around-comment": "off",
+			"react/prefer-stateless-function": "off"
+		}
+	},
+	"eslintIgnore": ["build/*"],
+	"repository": "https://github.com/spacerockzero/dev-radar",
+	"devDependencies": {
+		"babel-eslint": "^8.0.3",
+		"chai": "^4.1.2",
+		"eslint": "^4.5.0",
+		"eslint-config-synacor": "^1.1.0",
+		"eslint-plugin-import": "^2.8.0",
+		"firebase-tools": "^3.17.4",
+		"if-env": "^1.0.0",
+		"mocha": "^4.0.1",
+		"nyc": "^11.3.0",
+		"preact-cli": "^2.0.0",
+		"preact-cli-plugin-env-vars": "^1.1.0",
+		"prettier": "1.8.2"
+	},
+	"dependencies": {
+		"asyncawait": "^1.0.6",
+		"firebase": "^4.8.0",
+		"lodash-es": "^4.17.4",
+		"lodash.map": "^4.6.0",
+		"lodash.sortby": "^4.7.0",
+		"preact": "^8.2.1",
+		"preact-compat": "^3.17.0",
+		"preact-material-components": "^1.2.4",
+		"preact-router": "^2.5.5",
+		"react-infinite-scroller": "^1.1.3",
+		"react-lazy-load": "^3.0.13",
+		"react-virtual-list": "^2.2.4"
+	}
 }
