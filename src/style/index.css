@@ -121,3 +121,11 @@ article img {
 .mdc-card__title {
   text-align: right;
 }
+.loader, .quest-complete {
+  color: white;
+  margin-bottom: 1em;
+  text-align: center;
+}
+.quest-complete .emoji {
+  font-size: 200%;
+}
