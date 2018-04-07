@@ -7,7 +7,7 @@ import LazyLoad from 'react-lazy-load';
 
 export default class Article extends Component {
 	render(props, state) {
-		const date = new Date(props.createdOn);
+		// const date = new Date(props.createdOn);
 		// let dateString = `${date.toDateString()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}.${date.getMilliseconds()}`;
 		const img =
 			props.opengraph && props.opengraph.image ? (
