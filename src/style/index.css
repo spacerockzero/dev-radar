@@ -104,6 +104,10 @@ a:visited {
 article img {
   width: 100%;
 }
+article .article-date {
+  font-size: 80%;
+  text-align: right;
+}
 @media (min-width: 700px) {
   article > .mdc-card {
     display: flex;

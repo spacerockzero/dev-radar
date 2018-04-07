@@ -7,6 +7,8 @@ import LazyLoad from 'react-lazy-load';
 
 export default class Article extends Component {
 	render(props, state) {
+		const date = new Date(props.createdOn);
+		// let dateString = `${date.toDateString()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}.${date.getMilliseconds()}`;
 		const img =
 			props.opengraph && props.opengraph.image ? (
 				<a href={props.link}>
@@ -28,7 +30,7 @@ export default class Article extends Component {
 							</Card.Subtitle>
 							<Card.Title>{props.feedsrc}</Card.Title>
 						</Card.Primary>
-						{/* <Card.SupportingText>{new Date(props.createdOn).toDateString()}</Card.SupportingText> */}
+						{/* <Card.SupportingText className="article-date">{dateString}</Card.SupportingText> */}
 					</div>
 				</Card>
 			</article>
