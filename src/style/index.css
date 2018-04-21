@@ -108,6 +108,18 @@ article .article-date {
   font-size: 80%;
   text-align: right;
 }
+article .labels {
+  margin: 0.25em 0;
+}
+article .labels > span{
+  display: inline-block;
+  box-sizing: border-box;
+  font-size: 80%;
+  background-color: #ddd;
+  border-radius: 0.5em;
+  padding: 0 1em;
+  margin: 0.25em 0 0.25em 0.25em;
+}
 @media (min-width: 700px) {
   article > .mdc-card {
     display: flex;

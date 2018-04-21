@@ -1,7 +1,7 @@
 import { h, Component } from 'preact';
 import { uniqBy, differenceBy, orderBy } from 'lodash-es';
 import Article from '../article';
-import VirtualList from 'react-virtual-list';
+// import VirtualList from 'react-virtual-list';
 import InfiniteScroll from 'react-infinite-scroller';
 // import 'preact-material-components/Button/style.css';
 import style from './style';
@@ -18,9 +18,15 @@ export default class ArticleList extends Component {
 			articles: [],
 			newArticles: [],
 			loading: true,
-			currentPage: 1
+			currentPage: 1,
+			debug: false
 		};
 		this.getNewArticles = this.getNewArticles.bind(this);
+	}
+
+	getDebug() {
+		let debug = window.localStorage.getItem('debug');
+		return debug === 'true';
 	}
 
 	setLocalArticles(articles) {
@@ -74,11 +80,13 @@ export default class ArticleList extends Component {
 	}
 
 	componentDidMount() {
+		// get debug, if exist
+		let debug = this.getDebug();
 		// get old articles from local, if exist
 		let oldArticles = this.getLocalArticles();
-		if (oldArticles && oldArticles.length > 0) {
-			this.setState({ articles: oldArticles, loading: false });
-		}
+		// if (oldArticles && oldArticles.length > 0) {
+		this.setState({ articles: oldArticles, loading: false, debug });
+		// }
 	}
 
 	mergeNewArticles() {
@@ -118,7 +126,9 @@ export default class ArticleList extends Component {
 				>
 					{state.newArticles.length > 0 ? updateButton : null}
 					{state.loading === true ? loadingSpinner : null}
-					{state.articles.map((article, key) => <Article key={key} {...article} />)}
+					{state.articles.map((article, key) => (
+						<Article key={key} {...article} debug={state.debug} />
+					))}
 				</InfiniteScroll>
 				{state.currentPage === false ? (
 					<div className="quest-complete">
