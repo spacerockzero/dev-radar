@@ -1,6 +1,7 @@
 # TODO
 
 - [x] paginate/infinitescroll?
+- [ ] share icons using native share api
 - [ ] filter on source
 - [ ] show labels/categories
 - [ ] minimal mode
