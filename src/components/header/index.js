@@ -10,7 +10,7 @@ import 'preact-material-components/Dialog/style.css';
 import 'preact-material-components/Drawer/style.css';
 import 'preact-material-components/List/style.css';
 import 'preact-material-components/Toolbar/style.css';
-// import style from './style';
+import style from './style';
 
 export default class Header extends Component {
 	closeDrawer() {
@@ -81,7 +81,7 @@ export default class Header extends Component {
 						</List>
 					</Drawer.TemporaryDrawerContent>
 				</Drawer.TemporaryDrawer> */}
-				{/* <Dialog ref={this.dialogRef}>
+				<Dialog ref={this.dialogRef}>
 					<Dialog.Header>Settings</Dialog.Header>
 					<Dialog.Body>
 						<div>
@@ -91,7 +91,7 @@ export default class Header extends Component {
 					<Dialog.Footer>
 						<Dialog.FooterButton accept>okay</Dialog.FooterButton>
 					</Dialog.Footer>
-				</Dialog> */}
+				</Dialog>
 			</div>
 		);
 	}
