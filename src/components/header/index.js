@@ -81,7 +81,7 @@ export default class Header extends Component {
 						</List>
 					</Drawer.TemporaryDrawerContent>
 				</Drawer.TemporaryDrawer> */}
-				<Dialog ref={this.dialogRef}>
+				{/* <Dialog ref={this.dialogRef}>
 					<Dialog.Header>Settings</Dialog.Header>
 					<Dialog.Body>
 						<div>
@@ -91,7 +91,7 @@ export default class Header extends Component {
 					<Dialog.Footer>
 						<Dialog.FooterButton accept>okay</Dialog.FooterButton>
 					</Dialog.Footer>
-				</Dialog>
+				</Dialog> */}
 			</div>
 		);
 	}
