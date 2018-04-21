@@ -32,11 +32,11 @@ export default class Article extends Component {
 							<Card.Subtitle>
 								<a href={props.link}>{props.title}</a>
 							</Card.Subtitle>
-							<Card.Title className="labels">
+							{/* <Card.Title className="labels">
 								{props.labels && props.labels.length > 0 ? (
 									<div className="labels">{labelList}</div>
 								) : null}
-							</Card.Title>
+							</Card.Title> */}
 							<Card.Title>{props.feedsrc}</Card.Title>
 						</Card.Primary>
 
