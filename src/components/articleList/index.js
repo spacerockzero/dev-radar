@@ -42,7 +42,10 @@ export default class ArticleList extends Component {
 		let localArticles = window.localStorage.getItem('articles');
 		let articles = [];
 		try {
-			articles = JSON.parse(localArticles);
+			const localArts = JSON.parse(localArticles);
+			if (localArts.length > 0) {
+				articles = localArts;
+			}
 		}
 		catch (err) {
 			console.log('Error retrieving locally stored articles', err);
