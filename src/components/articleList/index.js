@@ -84,10 +84,8 @@ export default class ArticleList extends Component {
 		let debug = this.getDebug();
 		// get old articles from local, if exist
 		let oldArticles = this.getLocalArticles();
-		this.getNewArticles();
-		// if (oldArticles && oldArticles.length > 0) {
 		this.setState({ articles: oldArticles, loading: false, debug });
-		// }
+		this.getNewArticles();
 	}
 
 	mergeNewArticles() {
