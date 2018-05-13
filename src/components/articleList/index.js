@@ -3,7 +3,6 @@ import { uniqBy, differenceBy, orderBy } from 'lodash-es';
 import Article from '../article';
 // import VirtualList from 'react-virtual-list';
 import InfiniteScroll from 'react-infinite-scroller';
-// import 'preact-material-components/Button/style.css';
 import style from './style';
 
 const API_URL =
