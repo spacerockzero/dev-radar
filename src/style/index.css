@@ -15,7 +15,7 @@ html, body {
   background: linear-gradient(to right, #FFC371, #FF5F6D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 
-	font-family: 'Helvetica Neue', arial, sans-serif;
+	font-family: Roboto,'Helvetica Neue', Helvetica, Verdana, Arial, sans-serif;
 	font-weight: 400;
   color: #444;
   font-size: 18px;
@@ -55,10 +55,10 @@ html, body {
 	height: 100%;
 }
 
-.mdc-theme--dark {
+/* .mdc-theme--dark {
 	background-color: #333;
 	color: #fff;
-}
+} */
 header {
   /* background: #333399 */
   background: #ff4b1f;  /* fallback for old browsers */
@@ -75,20 +75,35 @@ articlelist > img {
   display: flex;
   width: 80%;
 }
-article {
+a.article {
   background-color: #fafafa;
+  display: flex;
   margin: 0.5em 0.25em;
   border-radius: 0.25em;
+  color: #ff4b1f;
+  text-decoration: none;
+  box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
 }
-
-a {
+a.article:visited {
+  background-color: rgb(220, 220, 220);
+  color: #ffa080;
+  color: #888;
+}
+/* a {
   color: #ff4b1f;
 }
 a:visited {
   color: #ffa080;
+} */
+header.toolbar {
+  text-align: center;
+  font-size: 65%;
 }
-.mdc-toolbar__title {
-  text-align: center
+header h1 {
+  margin: 0;
+  padding: 0.5em;
+  color: #fff;
+  /* font-family: Roboto, sans-serif; */
 }
 .merge-button {
   background: transparent;
@@ -101,17 +116,36 @@ a:visited {
   padding: 0.75em 2em;
   font-size: 100%;
 }
-article img {
+a.article .text-body {
+  display: flex;
+  flex-direction: column;
+  font-size: 90%;
   width: 100%;
 }
-article .article-date {
+a.article .text-body .title {
+  text-decoration: none;
+  padding: 1em;
+}
+a.article .text-body .feedsrc {
+  padding: 0.5em;
+  /* font-weight: bold; */
+  text-align: right;
+  color: #111;
+}
+a.article:visited .feedsrc {
+  color: #888;
+}
+a.article img {
+  width: 100%;
+}
+a.article .article-date {
   font-size: 80%;
   text-align: right;
 }
-article .labels {
+a.article .labels {
   margin: 0.25em 0;
 }
-article .labels > span{
+a.article .labels > span{
   display: inline-block;
   box-sizing: border-box;
   font-size: 80%;
@@ -121,21 +155,17 @@ article .labels > span{
   margin: 0.25em 0 0.25em 0.25em;
 }
 @media (min-width: 700px) {
-  article > .mdc-card {
+  a.article > .text-body {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: flex-start;
+    padding: 1em;
   }
-  article > .mdc-card > a {
+  a.article > .text-body > a {
     width: 30%;
     margin-bottom: -.35em;
   }
-  article .text-body {
-  }
-}
-.mdc-card__title {
-  text-align: right;
 }
 .loader, .quest-complete {
   color: white;
