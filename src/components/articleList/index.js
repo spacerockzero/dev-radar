@@ -65,8 +65,11 @@ export default class ArticleList extends Component {
 				if (articles.length > 0) {
 					// uniqueify, then set as articles array
 					const uniqNew = differenceBy(articles, this.state.articles, 'link');
-					this.setState({ newArticles: uniqNew, currentPage: this.state.currentPage + 1 });
-					this.setState({ loading: false });
+					this.setState({
+						newArticles: uniqNew,
+						currentPage: this.state.currentPage + 1,
+						loading: false
+					});
 					this.mergeNewArticles();
 				}
 				else {
@@ -82,12 +85,13 @@ export default class ArticleList extends Component {
 	}
 
 	componentDidMount() {
+		console.log('component did mount');
 		// get debug, if exist
 		let debug = this.getDebug();
 		// get old articles from local, if exist
-		let oldArticles = this.getLocalArticles();
-		this.setState({ articles: oldArticles, loading: false, debug });
-		this.getNewArticles();
+		// let oldArticles = this.getLocalArticles();
+		// this.setState({ articles: oldArticles, loading: false, debug });
+		// this.getNewArticles();
 	}
 
 	mergeNewArticles() {
@@ -112,7 +116,11 @@ export default class ArticleList extends Component {
 				Load {state.newArticles.length} new articles!
 			</button>
 		);
-		const loadingSpinner = <img src="/assets/loading.svg" />;
+		const loadingSpinner = (
+			<div class="loading-radar-wrapper">
+				<img class="loading-radar" src="/assets/loading.svg" />
+			</div>
+		);
 		return (
 			<articlelist className={style.articlelist}>
 				<InfiniteScroll
@@ -121,7 +129,7 @@ export default class ArticleList extends Component {
 					hasMore={this.state.currentPage !== false || false}
 					loader={
 						<div className="loader" key={0}>
-							Loading ...
+							<span>Loading ...</span>
 						</div>
 					}
 				>

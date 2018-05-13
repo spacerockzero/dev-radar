@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "dev-radar"
+    "default": "dev-radar",
+    "beta": "dev-radar-beta"
   }
 }
