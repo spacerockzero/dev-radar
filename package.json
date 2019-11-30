@@ -25,7 +25,9 @@
 			"react/prefer-stateless-function": "off"
 		}
 	},
-	"eslintIgnore": ["build/*"],
+	"eslintIgnore": [
+		"build/*"
+	],
 	"repository": "https://github.com/spacerockzero/dev-radar",
 	"devDependencies": {
 		"babel-eslint": "^8.0.3",
