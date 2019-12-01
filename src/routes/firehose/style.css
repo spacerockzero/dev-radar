@@ -1,0 +1,27 @@
+.pagenav h1 {
+  display:flex;
+  justify-content: space-evenly;
+  align-content: center;
+  margin: 0.5em
+}
+.pagenav {
+  display: flex;
+  /* flex-direction: row-reverse; */
+  justify-content: space-between;
+ padding: 1em;
+  width: 100%;
+}
+.pagenav button {
+  cursor: pointer;
+  padding: 0 2em;
+  background-color: transparent;
+  border-radius: 4px;
+  border: 2px solid purple;
+  color: purple;
+}
+.done {
+  margin: 2em auto;
+  display:flex;
+  justify-content: space-evenly;
+  align-content: center;
+}

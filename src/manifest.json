@@ -1,16 +1,21 @@
 {
-	"name": "dev-radar",
-	"short_name": "dev-radar",
-	"start_url": "/",
-	"display": "standalone",
-	"orientation": "portrait",
-	"background_color": "#ff9068",
-	"theme_color": "#ff9068",
-	"icons": [
-		{
-			"src": "/assets/icons/logo-256.png",
-			"type": "image/png",
-			"sizes": "256x256"
-		}
-	]
+  "name": "dev-radar2",
+  "short_name": "dev-radar2",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#fff",
+  "theme_color": "#673ab8",
+  "icons": [
+    {
+      "src": "/assets/icons/android-chrome-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/assets/icons/android-chrome-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
 }
