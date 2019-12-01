@@ -1,13 +1,16 @@
-import { h, Component } from 'preact';
-import { route } from 'preact-router';
-import style from './style';
+import { h } from 'preact';
+import { Link } from 'preact-router/match';
+import style from './style.css';
 
-export default class Header extends Component {
-	render() {
-		return (
-			<header className="toolbar">
-				<h1>[ DEV.RADAR ]</h1>
-			</header>
-		);
-	}
-}
+const Header = () => (
+	<header class={style.header}>
+		<h1>[ DEV.RADAR ]</h1>
+		<nav>
+			<Link activeClassName={style.active} href="/firehose/">
+        Firehose
+			</Link>
+		</nav>
+	</header>
+);
+
+export default Header;

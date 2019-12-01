@@ -1,0 +1,23 @@
+.article {
+  background-color: lavender;
+  display: flex;
+  margin-bottom:1em;
+  padding: 0.25em 1em;
+  text-decoration: none;
+}
+.article:hover {
+  background-color:lavenderblush;
+}
+.meta {
+  font-size: 70%;
+  line-height:1em;
+}
+.labels span {
+  margin-left: .5em;
+    background-color: #fff;
+    border-radius: 0.5em;
+    padding: 0em 0.5em;
+    line-height: 1.5em;
+    display: inline-flex;
+    margin-bottom: 0.2em;
+}
