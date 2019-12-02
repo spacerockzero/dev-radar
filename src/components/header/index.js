@@ -4,10 +4,16 @@ import style from './style.css';
 
 const Header = () => (
 	<header class={style.header}>
-		<h1>[ DEV.RADAR ]</h1>
+		<h1><a href="/">[ DEV.RADAR ]</a></h1>
 		<nav>
-			<Link activeClassName={style.active} href="/firehose/">
-        Firehose
+			<Link title="Ocean: Everything that exists" activeClassName={style.active} href="/ocean/">
+        🌊
+			</Link>
+			<Link title="Happy Place: Warm bubble of things I already agree with" activeClassName={style.active} href="/happy-place/">
+        🎠
+			</Link>
+			<Link title="Hot: What others are reading most" activeClassName={style.active} href="/hot/">
+        🔥
 			</Link>
 		</nav>
 	</header>

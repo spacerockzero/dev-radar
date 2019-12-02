@@ -7,6 +7,11 @@
 		"ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
 		"rewrites": [
 			{
+				// Serves index.html for requests to files or directories that do not exist
+				"source": "**",
+				"destination": "/index.html"
+			},
+			{
 				"source": "/getArticles",
 				"function": "getArticles"
 			},

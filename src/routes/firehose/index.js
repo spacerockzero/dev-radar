@@ -30,7 +30,7 @@ async function getNewArticles(page = 1, limit = 25) {
 function PageNav({ page, next, prev }) {
 	return (<nav className={style.pagenav}>
 		{page > 1 ? <button onClick={prev}>Prev</button> : <button>Prev</button>}
-		<h1>Firehose</h1>
+		<h1>🌊 {page}</h1>
 		<button onClick={next}>Next</button>
 	</nav>);
 }
@@ -52,20 +52,22 @@ const Firehose = ({ page, ...rest }) => {
 
 	function next(e) {
 		setContentPage(p => p + 1);
-		route(`/firehose/${contentPage + 1}`);
+		route(`/ocean/${contentPage + 1}`);
+		window.scrollTo(0, 0);
 	}
 	function prev(e) {
 		setContentPage(p => p - 1);
-		route(`/firehose/${contentPage - 1}`);
+		route(`/ocean/${contentPage - 1}`);
 	}
 
 	return (
 		<div className={style.firehose}>
 
 			<PageNav page={contentPage} next={next} prev={prev} />
-			{articles.length > 0 ? articles.map(art => <Article {...art} />)
-				: <div className={style.done}>You've read everything!</div>}
-			<PageNav page={contentPage} />
+			<div className={style.articles}>{articles.length > 0 ? articles.map(art => <Article {...art} />)
+				: <div className={style.done}>You've read everything in the ocean!</div>}
+			</div>
+			<PageNav page={contentPage} next={next} prev={prev} />
 			{/* <pre>{JSON.stringify(articles, null, 2)}</pre> */}
 		</div>
 	);

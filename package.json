@@ -14,7 +14,8 @@
     "serve": "preact build && serve build --single",
     "dev": "preact watch",
     "lint": "eslint src",
-    "test": "jest"
+    "test": "jest",
+    "deploy": "PREACT_APP_ENV=production npm run build && firebase deploy --only hosting"
   },
   "eslintConfig": {
     "extends": "eslint-config-synacor"

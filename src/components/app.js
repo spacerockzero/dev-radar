@@ -1,19 +1,25 @@
 import { h } from 'preact';
 import { Router } from 'preact-router';
 import Header from './header';
+import Redirect from './Redirect';
+import style from './style.css';
 
 // Code-splitting is automated for routes
 import Firehose from '../routes/firehose';
-import Home from '../routes/home';
+import HappyPlace from '../routes/home';
+import Hot from '../routes/home';
+
 
 export default function App() {
 	return (
-		<div id="app">
+		<main id="app" className={style.app}>
 			<Header />
 			<Router>
-				<Firehose path="/firehose/:page?" />
-				<Home path="/" />
+				<Firehose path="/ocean/:page?" />
+				<HappyPlace path="/happy-place/:page?" />
+				<Hot path="/hot/:page?" />
+				<Redirect path="/" to="/ocean/" />
 			</Router>
-		</div>
+		</main>
 	);
 }
