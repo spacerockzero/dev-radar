@@ -38,12 +38,15 @@ function PageNav({ page, next, prev }) {
 
 const Firehose = ({ page, ...rest }) => {
 	const [articles, setArticles] = useState([]);
+	const [loaded, setLoaded] = useState(false);
 	const pageProp = parseInt(page, 10) || 1;
 	const [contentPage, setContentPage] = useState(pageProp);
 
 	useEffect(async () => {
+		setLoaded(false);
 		const arts = await getNewArticles(contentPage);
 		setArticles(arts);
+		setLoaded(true);
 	}, [contentPage]);
 
 	useEffect(() => {
@@ -64,9 +67,11 @@ const Firehose = ({ page, ...rest }) => {
 		<div className={style.firehose}>
 
 			<PageNav page={contentPage} next={next} prev={prev} />
-			<div className={style.articles}>{articles.length > 0 ? articles.map(art => <Article {...art} />)
-				: <div className={style.done}>You've read everything in the ocean!</div>}
-			</div>
+			{!loaded ? <div className={style.loading}>Loading...</div> :
+				<div className={style.articles}>{articles.length > 0 ? articles.map(art => <Article {...art} />)
+					: <div className={style.done}>You've read everything in the ocean!</div>}
+				</div>
+			}
 			<PageNav page={contentPage} next={next} prev={prev} />
 			{/* <pre>{JSON.stringify(articles, null, 2)}</pre> */}
 		</div>

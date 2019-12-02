@@ -7,7 +7,9 @@ export default function Article({ id, link, title, feedsrc, labels, pubDate }) {
 
 	return (
 		<a href={link} className={style.article} data-id={id}>
-			<article class="text-body">
+			{/* <article className={style.articlewrapper}> */}
+			<div className={style.status} />
+			<div className={style.body}>
 				<h3>{title}</h3>
 				<p className={style.meta}>
 					{feedsrc} - {dateString}
@@ -17,7 +19,8 @@ export default function Article({ id, link, title, feedsrc, labels, pubDate }) {
 						</p>
 					}
 				</p>
-			</article>
+			</div>
+			{/* </article> */}
 		</a>
 	);
 }

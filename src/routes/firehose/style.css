@@ -27,3 +27,9 @@
 .articles {
   margin: 0 1em;
 }
+.loading {
+  margin: 0 1em;
+  display:flex;
+  justify-content: space-evenly;
+  align-content: center;
+}

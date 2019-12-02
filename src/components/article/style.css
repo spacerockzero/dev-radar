@@ -1,17 +1,29 @@
 .article {
   display: flex;
   margin-bottom:1em;
-  padding: 0.25em 1em;
   text-decoration: none;
   background-color: #1a1d2e;
   color: #eee;
   border-radius: 4px;
   will-change: background-color;
   transition: background-color 100ms ease-in-out;
-  /* border: 2px solid rgba(255,255,255,0.1) */
 }
 .article:hover {
   background-color: rgba(255,255,255,0.1)
+}
+.article:visited {
+  color: #6f727f;
+  background-color: #131521;
+}
+.article:visited .status {
+  background-color: grey;
+}
+.body {
+  padding: 0.25em 1em;
+}
+.status {
+  background-color: #88d754;
+  width:5px;
 }
 .meta {
   font-size: 70%;
@@ -27,3 +39,4 @@
   display: inline-flex;
   margin-bottom: 0.2em;
 }
+

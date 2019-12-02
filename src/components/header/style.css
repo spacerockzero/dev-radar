@@ -24,9 +24,9 @@
 }
 .header h1 a {
 	text-decoration: none;
-	/* color: #88d754; */
+	color: #88d754;
 
-	color: #6f727f;
+	/* color: #6f727f; */
 }
 
 .header nav {
