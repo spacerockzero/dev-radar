@@ -3,15 +3,15 @@
   margin-bottom:1em;
   padding: 0.25em 1em;
   text-decoration: none;
-  background-color: #131521;
-  color: #ddd;
+  background-color: #1a1d2e;
+  color: #eee;
   border-radius: 4px;
   will-change: background-color;
   transition: background-color 100ms ease-in-out;
   /* border: 2px solid rgba(255,255,255,0.1) */
 }
 .article:hover {
-  background-color: #1a1d2e
+  background-color: rgba(255,255,255,0.1)
 }
 .meta {
   font-size: 70%;
