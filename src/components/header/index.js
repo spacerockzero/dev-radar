@@ -4,7 +4,7 @@ import style from './style.css';
 
 const Header = () => (
 	<header class={style.header}>
-		<h1><a href="/">[ DEV.RADAR ]</a></h1>
+		<h1><a href="/">[ dev.radar ]</a></h1>
 		<nav>
 			<Link title="Ocean: Everything that exists" activeClassName={style.active} href="/ocean/">
         🌊
